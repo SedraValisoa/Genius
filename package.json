@@ -4,13 +4,18 @@
   "description": "A barebones typing website for you to complete. ",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devUI" : "npx @tailwindcss/cli -i ./assets/style/style.css -o ./assets/style/output.css --watch"
+  },  
   "keywords": [
     "typing",
     "game",
     "speedtyping"
   ],
   "author": "HEI Madagascar : Toky & Fiantso",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.1",
+    "tailwindcss": "^4.1.1"
+  }
 }
