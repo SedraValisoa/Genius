@@ -206,7 +206,7 @@ body {
   background-color: #EFEEDC;
   width: 451px;
   height: 201px;
-  filter: drop-shadow(0px 4px 60px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
 }
 @property --tw-blur {
   syntax: "*";
