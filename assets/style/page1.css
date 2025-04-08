@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'super';
+    src: url(../fonts/Hey\ Comic.otf);
+}
+
+@font-face {
+    font-family: 'base';
+    src: url(../fonts/Roboto-Regular.woff2);
+}
+
+body {
+    background: url("./../image/Background.png") center/cover no-repeat;
+}
+
+.cartoon {
+    filter: drop-shadow(2px 4px 0px var(--color-green-900));
+    transition: all 0.15s ease;
+}
+
+.cartoon-user {
+    filter: drop-shadow(2px 4px 0px var(--color-orange-950));
+    transition: all 0.15s ease;
+}
+
+
+.cartoon:hover {
+    background: var(--color-emerald-300);
+    filter: drop-shadow(0 0 0);
+}
+
+.cartoon-user path {
+    fill: var(--color-orange-50);
+}
+
+.cartoon-user:hover {
+    filter: drop-shadow(0 0 0);
+}
+
+.logo path {
+    cursor: pointer;
+}
