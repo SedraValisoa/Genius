@@ -4,10 +4,6 @@ body {
     background: url("./../image/Background.png") center / cover no-repeat;
 }
 
-.logo {
-    clip-path: path('M62.1375 62.8764C56.4902 52.8771 63.7146 40.5 75.1984 40.5H356.198C362.405 40.5 367.97 44.3224 370.198 50.1153L389.167 99.4346C392.802 108.886 386.22 119.15 376.114 119.789L113.384 136.406C107.645 136.769 102.204 133.82 99.3761 128.813L62.1375 62.8764Z');
-    background-color: #EFEEDC;
-    width: 451px;
-    height: 201px;
-    cursor: pointer;
+*{
+    box-sizing: border-box;
 }

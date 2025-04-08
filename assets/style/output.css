@@ -3,6 +3,11 @@
 @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
   @layer base {
     *, ::before, ::after, ::backdrop {
+      --tw-rotate-x: rotateX(0);
+      --tw-rotate-y: rotateY(0);
+      --tw-rotate-z: rotateZ(0);
+      --tw-skew-x: skewX(0);
+      --tw-skew-y: skewY(0);
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
@@ -173,8 +178,11 @@
   }
 }
 @layer utilities {
-  .mr-30 {
-    margin-right: calc(var(--spacing) * 30);
+  .mr-25 {
+    margin-right: calc(var(--spacing) * 25);
+  }
+  .ml-5 {
+    margin-left: calc(var(--spacing) * 5);
   }
   .flex {
     display: flex;
@@ -182,8 +190,23 @@
   .h-screen {
     height: 100vh;
   }
+  .w-15 {
+    width: calc(var(--spacing) * 15);
+  }
+  .w-30 {
+    width: calc(var(--spacing) * 30);
+  }
+  .w-75 {
+    width: calc(var(--spacing) * 75);
+  }
   .w-full {
     width: 100%;
+  }
+  .transform {
+    transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
+  }
+  .cursor-pointer {
+    cursor: pointer;
   }
   .items-center {
     align-items: center;
@@ -191,8 +214,8 @@
   .justify-between {
     justify-content: space-between;
   }
-  .gap-20 {
-    gap: calc(var(--spacing) * 20);
+  .gap-13 {
+    gap: calc(var(--spacing) * 13);
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
@@ -201,12 +224,33 @@
 body {
   background: url("./../image/Background.png") center / cover no-repeat;
 }
-.logo {
-  clip-path: path('M62.1375 62.8764C56.4902 52.8771 63.7146 40.5 75.1984 40.5H356.198C362.405 40.5 367.97 44.3224 370.198 50.1153L389.167 99.4346C392.802 108.886 386.22 119.15 376.114 119.789L113.384 136.406C107.645 136.769 102.204 133.82 99.3761 128.813L62.1375 62.8764Z');
-  background-color: #EFEEDC;
-  width: 451px;
-  height: 201px;
-  cursor: pointer;
+* {
+  box-sizing: border-box;
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateX(0);
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateY(0);
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateZ(0);
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: skewX(0);
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: skewY(0);
 }
 @property --tw-blur {
   syntax: "*";
