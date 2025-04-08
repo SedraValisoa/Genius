@@ -17,22 +17,49 @@ body {
     transition: all 0.15s ease;
 }
 
-.cartoon-user {
-    filter: drop-shadow(2px 4px 0px var(--color-orange-950));
+
+
+nav:has(.cartoon:hover) .cartoon {
+    background: var(--color-emerald-300);
+    scale: 1.05;
+
+
+}
+
+.cartoon:hover {
+    filter: drop-shadow(0 0 0);
     transition: all 0.15s ease;
 }
 
-
-.cartoon:hover {
-    background: var(--color-emerald-300);
-    filter: drop-shadow(0 0 0);
+.cartoon-user {
+    filter: drop-shadow(2px 4px 0px var(--color-stone-700));
+    transition: all 0.15s ease;
 }
+
 
 .cartoon-user path {
     fill: var(--color-orange-50);
 }
 
-.cartoon-user:hover {
+.cartoon-menu {
+    transition: all 0.15s ease;
+    filter: drop-shadow(2px 4px 0px var(--color-sky-950));
+
+}
+
+
+li:has(svg:hover) {
+    transition: all 0.15s ease;
+    scale: 1.03;
+}
+
+svg:hover~.cartoon-menu {
+    filter: drop-shadow(0 0 0);
+}
+
+a:hover .cartoon-user {
+    transition: all 0.15s ease;
+    scale: 1.05;
     filter: drop-shadow(0 0 0);
 }
 
