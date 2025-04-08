@@ -5,3 +5,7 @@
 @theme {
     --shadow-cartoon: 4px, 4px, 0 var(--color-green-900)
 }
+
+* {
+    box-sizing: border-box;
+}
