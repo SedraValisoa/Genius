@@ -1,9 +1,36 @@
+@import url(./page1.css);
 @import 'tailwindcss';
 
-body {
-    background: url("./../image/Background.png") center / cover no-repeat;
+@theme {
+    --shadow-cartoon: 4px, 4px, 0 var(--color-green-900)
 }
 
-*{
+body {
+    background: url("./../image/background.png") center / cover no-repeat;
+}
+
+* {
     box-sizing: border-box;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+    background: #2C506D;
+    border-radius: 8px;
+    color: white;
+    transition: 0.3s ease;
+    border: 1.5px solid #000;
+    z-index: 10;
+    &:hover {
+        box-shadow: 6px 4px 0px #000;
+    }
+}
+
+.blurred {
+    box-shadow: 0 0 20px 20px #EFEEDC;
+    border-radius: 10px;
 }
