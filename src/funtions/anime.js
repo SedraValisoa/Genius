@@ -1,4 +1,5 @@
 import {
+  createSpring,
   createTimeline,
   stagger,
   waapi,
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   const aside = waapi.animate(".anime", {
     x: "18rem",
-
+    ease: createSpring({ stiffness: 25, damping: 5 }),
     delay: stagger(200),
   });
   const tl = createTimeline()
@@ -28,4 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
     .sync(user, 200)
     .sync(notification, 250)
     .sync(footer, 400);
+  document.addEventListener("click", () => tl.reverse());
 });
