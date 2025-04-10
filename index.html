@@ -90,8 +90,7 @@
                     before:top-1/2 before:left-1/2 before:-translate-x-1/2 hover:before:w-22.5
                     before:rounded-full before:transition-normal before:ease-linear before:duration-15000">
         <img src="bg-timer.svg" alt="Timer" class="w-30">
-        <p class="absolute font-[ZCOOL_KuaiLe] text-2xl text-secondary translate-y-4">00:15
-        </p>
+        <p class="absolute font-[ZCOOL_KuaiLe] text-2xl text-secondary translate-y-4">00:15</p>
       </div>
 
       <!-- Langage / Option-timer -->
@@ -120,34 +119,30 @@
         </div>
       </div>
       <!-- Barre de difficulté -->
-      <div class="absolute top-[25%] right-[5%]">
+      <div class="absolute top-1/4 right-[5%]">
         <div class="flex items-center space-x-4">
           <!-- Barre de difficulté avec dégradé -->
-          <div class="h-85 w-[15px] rounded-ful l bg-gradient-to-t from-red-500 via-orange-500 to-green-500 rounded-3xl"></div>
+          <div class="h-85 w-[15px] rounded-ful l bg-gradient-to-b from-red-500 via-orange-500 to-green-500 rounded-3xl"></div>
         
           <!-- Boutons à droite -->
           <div class="flex flex-col justify-between h-85 py-2">
-            <button class="cursor-pointer"><img src="normal.svg" alt="Normal"></button>
-            <button class="cursor-pointer"><img src="extreme.svg" alt="Extreme"></button>
-            <button class="cursor-pointer"><img src="master.svg" alt="Master"></button>
+            <img src="master.svg" alt="Master">
+            <img src="extreme.svg" alt="Extreme">
+            <img src="normal.svg" alt="Normal">
           </div>
         </div> 
-        
-        
       </div>
     </div>
   </main>
+
   <footer class="grid grid-cols-3 w-full h-fit pb-7">
     <span></span>
     <button class="bg-primary p-1 rounded-full blurred cursor-pointer mx-auto">
       <img src="restart.svg" alt="Restart" class="w-8">
     </button>
-      <!-- Button preference -->
-    <button class="mx-auto cursor-pointer">
-      Preférence 
+    <button class="mx-auto cursor-pointer cartoon w-10 border-2 border-green-900 rounded-full text-white bg-emerald-500  grid place-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-paintbrush-icon lucide-paintbrush"><path d="m14.622 17.897-10.68-2.913"/><path d="M18.376 2.622a1 1 0 1 1 3.002 3.002L17.36 9.643a.5.5 0 0 0 0 .707l.944.944a2.41 2.41 0 0 1 0 3.408l-.944.944a.5.5 0 0 1-.707 0L8.354 7.348a.5.5 0 0 1 0-.707l.944-.944a2.41 2.41 0 0 1 3.408 0l.944.944a.5.5 0 0 0 .707 0z"/><path d="M9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15"/></svg>
     </button>
-
   </footer>
 </body>
-
 </html>
