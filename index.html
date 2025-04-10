@@ -11,9 +11,9 @@
   <base href="assets/image/">
 </head>
 
-<body class="h-screen font-[base] w-full">
+<body class="flex flex-col min-h-screen font-[base] w-full">
   <header class="h-20">
-    <nav class="flex justify-between items-center bg-gradient-to-t from-stone-100/0 to-[#EFEEDC]">
+    <nav class="flex justify-between items-center">
       <img src="logo-home.png" alt="Logo" class="w-60 ml-4 select-none cursor-pointer ">
       <div class="flex items-center gap-4 mr-5">
         <button class="bg-emerald-500 p-2 size-12 border-2 border-green-900 cursor-pointer cartoon rounded-full">
@@ -68,7 +68,7 @@
     </nav>
   </header>
 
-  <main>
+  <main class="flex-grow">
     <div class="w-full h-full">
       <!-- Button option -->
       <div class="flex items-center justify-evenly">
@@ -84,23 +84,23 @@
       <!-- Timer -->
 
       <div class="w-full -mt-6 flex justify-center relative after:-z-2 transition-colors
-                    after:absolute after:content[''] after:left-1/2 after:top-1/2 after:w-160 after:h-3 after:border-3 
-                    after:border-[#7FBC8C] after:bg-[#EFEEDC] after:-translate-x-1/2 after:rounded-full 
-                    before:content[''] before:-z-1  before:w-160 before:h-3 before:bg-[#7FBC8C] before:absolute
+                    after:absolute after:left-1/2 after:top-1/2 after:w-160 after:h-3 after:border-3 
+                    after:border-[#7FBC8C] after:bg-primary after:-translate-x-1/2 after:rounded-full 
+                    before:-z-1  before:w-160 before:h-3 before:bg-[#7FBC8C] before:absolute
                     before:top-1/2 before:left-1/2 before:-translate-x-1/2 hover:before:w-22.5
                     before:rounded-full before:transition-normal before:ease-linear before:duration-15000">
         <img src="bg-timer.svg" alt="Timer" class="w-30">
-        <p class="absolute font-[ZCOOL_KuaiLe] text-2xl text-[#2C506D] translate-y-4">00:15
+        <p class="absolute font-[ZCOOL_KuaiLe] text-2xl text-secondary translate-y-4">00:15
         </p>
       </div>
 
       <!-- Langage / Option-timer -->
       <div class="flex-1 flex justify-around -translate-y-4">
-        <button class="btn p-1 bg-transparent! text-[#2C506D]!">
+        <button class="btn p-1 bg-transparent! text-secondary!">
           <img src="language.svg" alt="Language">
           <p class="font-semibold">English</p>
         </button>
-        <button class="btn p-1 bg-transparent! text-[#2C506D]!">
+        <button class="btn p-1 bg-transparent! text-secondary!">
           <img src="time.svg" alt="Time">
           <p class="font-semibold">Time</p>
         </button>
@@ -110,17 +110,44 @@
     <!-- Typing -->
     <div class="w-200 h-75 mx-auto mt-2">
       <div class="w-full h-full relative flex p-7">
-        <span class="absolute top-0 right-0 w-[70px] h-[60px] border-t-[5px] border-r-[5px] border-[#BD7D7D] rounded-tr-[30px]"></span>
-        <span class="absolute top-0 left-0 w-[70px] h-[60px] border-t-[5px] border-l-[5px] border-[#BD7D7D] rounded-tl-[30px]"></span>
-        <span class="absolute bottom-0 right-0 w-[70px] h-[60px] border-b-[5px] border-r-[5px] border-[#BD7D7D] rounded-br-[30px]"></span>
-        <span class="absolute bottom-0 left-0 w-[70px] h-[60px] border-b-[5px] border-l-[5px] border-[#BD7D7D] rounded-bl-[30px]"></span>
-        <div class="blurred w-175 h-55 bg-[#EFEEDC] m-auto">
+        <span class="absolute top-0 right-0 w-17.5 h-15 border-t-[5px] border-r-[5px] border-red rounded-tr-4xl"></span>
+        <span class="absolute top-0 left-0 w-17.5 h-15 border-t-[5px] border-l-[5px] border-red rounded-tl-4xl"></span>
+        <span class="absolute bottom-0 right-0 w-17.5 h-15 border-b-[5px] border-r-[5px] border-red rounded-br-4xl"></span>
+        <span class="absolute bottom-0 left-0 w-17.5 h-15 border-b-[5px] border-l-[5px] border-red rounded-bl-4xl"></span>
+        <div class="blurred w-175 h-55 bg-primary m-auto rounded-lg">
           <!-- Lorem Ipsum -->
           <!-- <p>Lorem Ipsum</p> -->
         </div>
       </div>
+      <!-- Barre de difficulté -->
+      <div class="absolute top-[25%] right-[5%]">
+        <div class="flex items-center space-x-4">
+          <!-- Barre de difficulté avec dégradé -->
+          <div class="h-85 w-[15px] rounded-ful l bg-gradient-to-t from-red-500 via-orange-500 to-green-500 rounded-3xl"></div>
+        
+          <!-- Boutons à droite -->
+          <div class="flex flex-col justify-between h-85 py-2">
+            <button class="cursor-pointer"><img src="normal.svg" alt="Normal"></button>
+            <button class="cursor-pointer"><img src="extreme.svg" alt="Extreme"></button>
+            <button class="cursor-pointer"><img src="master.svg" alt="Master"></button>
+          </div>
+        </div> 
+        
+        
+      </div>
     </div>
   </main>
+  <footer class="grid grid-cols-3 w-full h-fit pb-7">
+    <span></span>
+    <button class="bg-primary p-1 rounded-full blurred cursor-pointer mx-auto">
+      <img src="restart.svg" alt="Restart" class="w-8">
+    </button>
+      <!-- Button preference -->
+    <button class="mx-auto cursor-pointer">
+      Preférence 
+    </button>
+
+  </footer>
 </body>
 
 </html>
