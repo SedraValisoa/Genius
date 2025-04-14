@@ -8,6 +8,11 @@
     src: url(../fonts/Roboto-Regular.woff2);
 }
 
+@font-face {
+    font-family: 'archivo';
+    src: url(../fonts/Archivo-VariableFont_wdth\,wght.ttf);
+}
+
 body {
     background: url("./../image/Background.png") center/cover no-repeat;
 }
