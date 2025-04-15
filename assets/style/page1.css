@@ -8,32 +8,58 @@
     src: url(../fonts/Roboto-Regular.woff2);
 }
 
+<<<<<<< HEAD
+=======
+@font-face {
+    font-family: 'archivo';
+    src: url(../fonts/Archivo-VariableFont_wdth\,wght.ttf);
+}
+
+>>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
 body {
     background: url("./../image/Background.png") center/cover no-repeat;
 }
 
 .cartoon {
+<<<<<<< HEAD
     filter: drop-shadow(2px 4px 0px var(--color-green-900));
+=======
+    filter: drop-shadow(0 0 0);
+>>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
     transition: all 0.15s ease;
 }
 
 .cartoon-user {
+<<<<<<< HEAD
     filter: drop-shadow(2px 4px 0px var(--color-orange-950));
+=======
+    filter: drop-shadow(0 0 0);
+>>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
     transition: all 0.15s ease;
 }
 
 
 .cartoon:hover {
+<<<<<<< HEAD
     background: var(--color-emerald-300);
     filter: drop-shadow(0 0 0);
+=======
+    filter: drop-shadow(2px 4px 0px var(--color-green-900));
+    background: var(--color-emerald-400);
+>>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
 }
 
 .cartoon-user path {
     fill: var(--color-orange-50);
 }
 
+<<<<<<< HEAD
 .cartoon-user:hover {
     filter: drop-shadow(0 0 0);
+=======
+a:hover .cartoon-user {
+    filter: drop-shadow(2px 4px 0px var(--color-orange-950));
+>>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
 }
 
 .logo path {

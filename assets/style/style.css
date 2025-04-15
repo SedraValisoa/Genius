@@ -1,6 +1,7 @@
 @import url(./page1.css);
 @import 'tailwindcss';
 
+<<<<<<< HEAD
 
 @theme {
     --shadow-cartoon: 4px, 4px, 0 var(--color-green-900)
@@ -9,3 +10,37 @@
 * {
     box-sizing: border-box;
 }
+=======
+@theme {
+    --shadow-cartoon: 4px, 4px, 0 var(--color-green-900);
+    --color-primary: #EFEEDC;
+    --color-secondary: #2C506D;
+    --color-red: #BD7D7D;
+}
+
+body {
+    background: url("./../image/background.png") center / cover no-repeat;
+    box-shadow: inset 0px 0px 100px 16px #EFEEDC;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+    background: #2C506D;
+    border-radius: 8px;
+    color: white;
+    transition: 0.3s ease;
+    border: 1.5px solid #000;
+    z-index: 10;
+    &:hover {
+        box-shadow: 6px 4px 0px #000;
+    }
+}
+
+.blurred {
+    box-shadow: 0 0 20px 20px #EFEEDC;
+}
+>>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
