@@ -3,7 +3,7 @@ import {
   createTimeline,
   stagger,
   waapi,
-} from "../../node_modules/animejs/lib/anime.esm.js";
+} from "../../../node_modules/animejs/lib/anime.esm.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const logo = waapi.animate(".anime-logo", {
@@ -29,5 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
     .sync(user, 200)
     .sync(notification, 250)
     .sync(footer, 400);
-  document.addEventListener("click", () => tl.reverse());
+  // document.addEventListener("click", () => tl.reverse());
 });
