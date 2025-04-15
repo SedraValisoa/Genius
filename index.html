@@ -1,148 +1,908 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/image/Logo.png" type="image/png" />
+    <title>Genius</title>
+    <link rel="stylesheet" href="assets/style/output.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Genius</title>
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="stylesheet" href="assets/style/output.css">
-  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
-  <base href="assets/image/">
-</head>
-
-<body class="flex flex-col min-h-screen font-[base] w-full">
-  <header class="h-20">
-    <nav class="flex justify-between items-center">
-      <img src="logo-home.png" alt="Logo" class="w-60 ml-4 select-none cursor-pointer ">
-      <div class="flex items-center gap-4 mr-5">
-        <button class="bg-emerald-500 p-2 size-12 border-2 border-green-900 cursor-pointer cartoon rounded-full">
-          <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_d_237_363)">
+  <body class="flex flex-col min-h-screen font-[base] w-full">
+    <header class="h-20">
+      <nav class="flex justify-between items-center">
+        <img
+          src="/assets/image/logo-home.png"
+          alt="Logo"
+          class="w-60 ml-4 select-none cursor-pointer anime-logo"
+        />
+        <div class="flex items-center gap-4 mr-5">
+          <button
+            class="bg-emerald-500 p-2 size-12 border-2 border-green-900 cursor-pointer cartoon anime-notification -translate-y-8 rounded-full"
+          >
+            <svg
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_d_237_363)">
+                <path
+                  d="M12.5 16.6667C12.5 12.469 12.5 10.3702 13.2681 8.74621C14.0594 7.07307 15.4064 5.72608 17.0796 4.93474C18.7035 4.16666 20.8024 4.16666 25 4.16666C29.1976 4.16666 31.2965 4.16666 32.9204 4.93474C34.5936 5.72608 35.9406 7.07307 36.7319 8.74621C37.5 10.3702 37.5 12.469 37.5 16.6667V20.5682C37.5 22.7705 37.5 23.8716 37.7903 24.9196C38.0806 25.9676 38.6471 26.9118 39.7801 28.8002L41.9326 32.3877C42.7384 33.7306 43.1412 34.4021 42.854 34.9094C42.5668 35.4167 41.7837 35.4167 40.2176 35.4167H9.78247C8.21637 35.4167 7.43333 35.4167 7.1461 34.9094C6.85887 34.4021 7.26173 33.7306 8.06747 32.3877L10.22 28.8001C11.353 26.9118 11.9195 25.9676 12.2097 24.9196C12.5 23.8716 12.5 22.7705 12.5 20.5683V16.6667Z"
+                  fill="#EFEEDC"
+                />
+              </g>
               <path
-                d="M12.5 16.6667C12.5 12.469 12.5 10.3702 13.2681 8.74621C14.0594 7.07307 15.4064 5.72608 17.0796 4.93474C18.7035 4.16666 20.8024 4.16666 25 4.16666C29.1976 4.16666 31.2965 4.16666 32.9204 4.93474C34.5936 5.72608 35.9406 7.07307 36.7319 8.74621C37.5 10.3702 37.5 12.469 37.5 16.6667V20.5682C37.5 22.7705 37.5 23.8716 37.7903 24.9196C38.0806 25.9676 38.6471 26.9118 39.7801 28.8002L41.9326 32.3877C42.7384 33.7306 43.1412 34.4021 42.854 34.9094C42.5668 35.4167 41.7837 35.4167 40.2176 35.4167H9.78247C8.21637 35.4167 7.43333 35.4167 7.1461 34.9094C6.85887 34.4021 7.26173 33.7306 8.06747 32.3877L10.22 28.8001C11.353 26.9118 11.9195 25.9676 12.2097 24.9196C12.5 23.8716 12.5 22.7705 12.5 20.5683V16.6667Z"
-                fill="#EFEEDC" />
+                d="M30.0584 37.5C30.1412 37.5 30.2087 37.5672 30.205 37.65C30.1577 38.7006 29.6154 39.7003 28.6829 40.4463C27.7061 41.2277 26.3814 41.6667 25 41.6667C23.6187 41.6667 22.2939 41.2277 21.3172 40.4463C20.3847 39.7003 19.8423 38.7006 19.7951 37.65C19.7914 37.5672 19.8589 37.5 19.9417 37.5L25 37.5L30.0584 37.5Z"
+                fill="#F4D738"
+              />
+              <defs>
+                <filter
+                  id="filter0_d_237_363"
+                  x="3.05371"
+                  y="4.16666"
+                  width="43.8927"
+                  height="39.25"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="4" />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_237_363"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_237_363"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+          </button>
+          <a
+            href="#"
+            class="flex relative items-center scale-[0.58] select-none anime-user translate-x-8"
+          >
+            <div class="absolute top-3 left-5 flex items-center justify-center">
+              <svg
+                class="size-14 z-20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="8" r="4" fill="#222222" />
+                <path
+                  d="M5.33788 17.3206C5.99897 14.5269 8.77173 13 11.6426 13H12.3574C15.2283 13 18.001 14.5269 18.6621 17.3206C18.79 17.8611 18.8917 18.4268 18.9489 19.0016C19.0036 19.5512 18.5523 20 18 20H6C5.44772 20 4.99642 19.5512 5.0511 19.0016C5.1083 18.4268 5.20997 17.8611 5.33788 17.3206Z"
+                  fill="#7E869E"
+                  fill-opacity="0.25"
+                />
+              </svg>
+
+              <p class="font-bold text-2xl text-stone-500 z-40">User</p>
+            </div>
+            <svg
+              width="166"
+              height="100"
+              class="cartoon-user"
+              viewBox="0 0 166 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_di_338_25)">
+                <path
+                  d="M13.0548 16.2764C14.5302 8.49046 15.2679 4.59752 18.0431 2.29876C20.8184 0 24.7806 0 32.7051 0H136.412C144.063 0 147.888 0 150.624 2.18212C153.36 4.36424 154.21 8.09359 155.912 15.5523L162.504 44.4522C164.621 53.7361 165.68 58.378 163.44 61.8998C161.199 65.4216 156.546 66.4298 147.24 68.4463L26.5067 94.6065C13.1719 97.4959 6.50444 98.9406 2.65753 95.1928C-1.18938 91.445 0.0807869 84.7422 2.62111 71.3365L13.0548 16.2764Z"
+                />
+                <path
+                  d="M32.7051 1H136.412C140.262 1 143.06 1.0017 145.241 1.26553C147.395 1.52608 148.831 2.03151 150 2.96391C151.169 3.89631 151.982 5.18458 152.715 7.22637C153.457 9.29373 154.081 12.0213 154.937 15.7747L161.529 44.6746C162.594 49.3442 163.368 52.7484 163.61 55.4267C163.849 58.0761 163.55 59.8631 162.596 61.363C161.642 62.863 160.15 63.8912 157.649 64.7974C155.12 65.7134 151.709 66.4547 147.028 67.469L26.295 93.6292C19.5953 95.0809 14.681 96.143 10.9577 96.3908C7.25383 96.6373 4.97806 96.0574 3.35535 94.4765C1.73264 92.8956 1.09355 90.6358 1.2433 86.9267C1.39382 83.1983 2.32732 78.258 3.60363 71.5227L14.0373 16.4625C14.7797 12.5447 15.3212 9.69649 16.0138 7.53502C16.6979 5.39989 17.4957 4.05071 18.681 3.06888C19.8664 2.08706 21.3405 1.55446 23.5657 1.27981C25.8183 1.00178 28.7175 1 32.7051 1Z"
+                  class="stroke-stone-400"
+                  stroke-width="3"
+                />
+              </g>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-grow">
+      <aside
+        class="bg-gradient-to-l from-transparent from-75% to-orange-50 flex flex-col w-1/4 h-screen fixed top-0 left-0 px-8 justify-center"
+      >
+        <ul>
+          <li class="relative -translate-x-full anime">
+            <svg
+              class="size-12 absolute z-10 translate-x-3 translate-y-2 cursor-pointer"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.30976 6.69267L3.98623 9.19267C3.2584 10.5675 2.89448 11.2549 2.89448 12C2.89448 12.7451 3.2584 13.4325 3.98623 14.8073L5.30976 17.3073C6.13314 18.8626 6.54483 19.6402 7.25883 20.0701C7.97282 20.5 8.85271 20.5 10.6125 20.5H13.3875C15.1473 20.5 16.0272 20.5 16.7412 20.0701C17.4552 19.6402 17.8669 18.8626 18.6902 17.3073L20.0138 14.8073C20.7416 13.4325 21.1055 12.7451 21.1055 12C21.1055 11.2549 20.7416 10.5675 20.0138 9.19268L18.6902 6.69267C17.8669 5.1374 17.4552 4.35977 16.7412 3.92988C16.0272 3.5 15.1473 3.5 13.3875 3.5H10.6125C8.85271 3.5 7.97282 3.5 7.25883 3.92988C6.54483 4.35977 6.13314 5.1374 5.30976 6.69267Z"
+                class="fill-amber-50/90 stroke-1 stroke-amber-400"
+              />
+              <circle cx="12" cy="12" r="3" class="fill-amber-300" />
+            </svg>
+
+            <div class="cartoon-menu">
+              <svg
+                class="size-20"
+                viewBox="0 0 136 131"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g filter="url(#filter0_di_237_294)">
+                  <path
+                    d="M6 19C6 9.05887 14.0589 1 24 1H108C117.941 1 126 9.05888 126 19V74.7265C126 82.8554 120.552 89.9756 112.705 92.1006L28.7055 114.851C17.2622 117.95 6 109.332 6 97.4765V19Z"
+                    fill="#2C506D"
+                  />
+                  <path
+                    d="M7 19C7 9.61116 14.6112 2 24 2H108C117.389 2 125 9.61116 125 19V74.7265C125 82.4038 119.854 89.1284 112.444 91.1354L28.444 113.885C17.6365 116.812 7 108.673 7 97.4765V19Z"
+                    stroke="#0C0A0F"
+                    stroke-width="3"
+                  />
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_di_237_294"
+                    x="0"
+                    y="0"
+                    width="136"
+                    height="130.487"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                  >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dx="2" dy="7" />
+                    <feGaussianBlur stdDeviation="4" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="BackgroundImageFix"
+                      result="effect1_dropShadow_237_294"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow_237_294"
+                      result="shape"
+                    />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dx="7" dy="-6" />
+                    <feComposite
+                      in2="hardAlpha"
+                      operator="arithmetic"
+                      k2="-1"
+                      k3="1"
+                    />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0.0470588 0 0 0 0 0.0392157 0 0 0 0 0.0588235 0 0 0 0.1 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="shape"
+                      result="effect2_innerShadow_237_294"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+            </div>
+          </li>
+          <li class="relative -translate-x-full anime">
+            <svg
+              class="size-12 absolute z-10 translate-x-5 translate-y-3 cursor-pointer"
+              viewBox="0 0 50 35"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.8333 11.6667H20.8542"
+                stroke="#EFEEDC"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M25 17.5H25.0208"
+                stroke="#F4D738"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M29.1667 11.6667H29.1875"
+                stroke="#F4D738"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M33.3333 17.5H33.3542"
+                stroke="#EFEEDC"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M37.5 11.6667H37.5208"
+                stroke="#F4D738"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12.5 11.6667H12.5208"
+                stroke="#F4D738"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M14.5833 23.3333H35.4167"
+                stroke="#EFEEDC"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16.6667 17.5H16.6875"
+                stroke="#F4D738"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M41.6667 5.83331H8.33334C6.03215 5.83331 4.16667 7.13915 4.16667 8.74998V26.25C4.16667 27.8608 6.03215 29.1666 8.33334 29.1666H41.6667C43.9679 29.1666 45.8333 27.8608 45.8333 26.25V8.74998C45.8333 7.13915 43.9679 5.83331 41.6667 5.83331Z"
+                stroke="#F4D738"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <div class="cartoon-menu">
+              <svg
+                class="size-20"
+                viewBox="0 0 130 126"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g filter="url(#filter0_di_237_297)">
+                  <path
+                    d="M20.1332 30.8002C21.3908 23.4321 27.0711 17.6079 34.4055 16.1665L97.4665 3.77334C107.801 1.74227 117.664 8.9796 118.828 19.4477L127.145 94.3073C128.529 106.764 117.076 116.787 104.913 113.763L26.2114 94.1982C17.069 91.9255 11.2256 82.9878 12.8106 73.7014L20.1332 30.8002Z"
+                    fill="#2C506D"
+                  />
+                  <path
+                    d="M21.1189 30.9684C22.3067 24.0097 27.6714 18.5091 34.5983 17.1478L97.6594 4.75457C107.42 2.83633 116.735 9.67159 117.834 19.5582L126.151 94.4177C127.459 106.183 116.642 115.649 105.154 112.793L26.4526 93.2278C17.8182 91.0813 12.2994 82.6401 13.7963 73.8697L21.1189 30.9684Z"
+                    stroke="#0C0A0F"
+                    stroke-width="3"
+                  />
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_di_237_297"
+                    x="0.551697"
+                    y="0.431152"
+                    width="128.707"
+                    height="124.876"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                  >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dx="-5" dy="4" />
+                    <feGaussianBlur stdDeviation="3.5" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.39 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="BackgroundImageFix"
+                      result="effect1_dropShadow_237_297"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow_237_297"
+                      result="shape"
+                    />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dx="-7" dy="-7" />
+                    <feGaussianBlur stdDeviation="0.5" />
+                    <feComposite
+                      in2="hardAlpha"
+                      operator="arithmetic"
+                      k2="-1"
+                      k3="1"
+                    />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0.0470588 0 0 0 0 0.0392157 0 0 0 0 0.0588235 0 0 0 0.1 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="shape"
+                      result="effect2_innerShadow_237_297"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+            </div>
+          </li>
+          <li class="relative -translate-x-full anime">
+            <svg
+              viewBox="0 0 24 24"
+              class="size-10 absolute z-10 translate-x-4 translate-y-3 cursor-pointer"
+            >
+              <path d="m0 0h24v24h-24z" fill="none" />
+              <path
+                class="fill-amber-300"
+                d="m2.8 5.2 4.2 2.8 4.186-5.86a1 1 0 0 1 1.628 0l4.186 5.86 4.2-2.8a1 1 0 0 1 1.547.95l-1.643 13.967a1 1 0 0 1 -.993.883h-16.222a1 1 0 0 1 -.993-.883l-1.643-13.968a1 1 0 0 1 1.547-.949zm9.2 9.8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+              />
+            </svg>
+            <div class="cartoon-menu">
+              <svg
+                class="size-20"
+                viewBox="0 0 134 128"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g filter="url(#filter0_di_237_291)">
+                  <path
+                    d="M11.4667 27.4317C12.5576 19.244 19.0811 12.8497 27.2889 11.9227L101.358 3.55723C112.91 2.25246 122.651 12.0782 121.246 23.619L113.839 84.4536C112.908 92.1047 107.208 98.3136 99.6647 99.8951L23.8952 115.781C11.7416 118.329 0.719359 108.095 2.35938 95.7864L11.4667 27.4317Z"
+                    fill="#2C506D"
+                  />
+                  <path
+                    d="M12.4579 27.5638C13.4882 19.831 19.6493 13.7918 27.4012 12.9163L101.47 4.55091C112.381 3.31863 121.58 12.5985 120.253 23.4981L112.847 84.3328C111.967 91.5588 106.584 97.4227 99.4595 98.9164L23.69 114.802C12.2116 117.208 1.80171 107.544 3.35062 95.9184L12.4579 27.5638Z"
+                    stroke="#0C0A0F"
+                    stroke-width="3"
+                  />
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_di_237_291"
+                    x="-1.80321"
+                    y="-0.559448"
+                    width="135.185"
+                    height="127.732"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                  >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dx="5" dy="4" />
+                    <feGaussianBlur stdDeviation="3.5" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="BackgroundImageFix"
+                      result="effect1_dropShadow_237_291"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow_237_291"
+                      result="shape"
+                    />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dx="-7" dy="-7" />
+                    <feGaussianBlur stdDeviation="2" />
+                    <feComposite
+                      in2="hardAlpha"
+                      operator="arithmetic"
+                      k2="-1"
+                      k3="1"
+                    />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0.0470588 0 0 0 0 0.0392157 0 0 0 0 0.0588235 0 0 0 0.1 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="shape"
+                      result="effect2_innerShadow_237_291"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+            </div>
+          </li>
+        </ul>
+      </aside>
+      <div class="w-full h-full">
+        <!-- Button option -->
+        <div class="flex items-center justify-evenly">
+          <button class="btn py-2 pr-2.5 pl-3.5 select-none">
+            <p>With</p>
+            <img src="arrow_drop_down.svg" alt="Arrow Drop Down" />
+          </button>
+          <button class="btn py-2 pr-2.5 pl-3.5 select-none">
+            <p class="-translate-y-0.5">Type</p>
+            <img src="arrow_drop_down.svg" alt="Arrow Drop Down" />
+          </button>
+        </div>
+        <!-- Timer -->
+
+        <div
+          class="w-full -mt-6 flex justify-center relative after:-z-2 transition-colors select-none after:absolute after:left-1/2 after:top-1/2 after:w-160 after:h-3 after:border-3 after:border-[#7FBC8C] after:bg-primary after:-translate-x-1/2 after:rounded-full before:-z-1 before:w-160 before:h-3 before:bg-[#7FBC8C] before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 hover:before:w-22.5 before:rounded-full before:transition-normal before:ease-linear before:duration-15000"
+        >
+          <img src="bg-timer.svg" alt="Timer" class="w-30" />
+          <p
+            id="info"
+            class="absolute font-[ZCOOL_KuaiLe] text-2xl text-secondary translate-y-4"
+          >
+            00:15
+          </p>
+        </div>
+
+        <!-- Langage / Option-timer -->
+        <div class="flex-1 flex justify-around -translate-y-4">
+          <button class="btn p-1 bg-transparent! text-secondary! select-none">
+            <img src="language.svg" alt="Language" />
+            <p class="font-semibold">English</p>
+          </button>
+          <button class="btn p-1 bg-transparent! text-secondary! select-none">
+            <img src="time.svg" alt="Time" />
+            <p class="font-semibold">Time</p>
+          </button>
+        </div>
+      </div>
+
+      <!-- Typing -->
+      <div class="w-200 h-75 mx-auto mt-2">
+        <div class="w-full h-full relative flex p-7">
+          <span
+            class="absolute top-0 right-0 w-17.5 h-15 border-t-[5px] border-r-[5px] border-red rounded-tr-4xl"
+          ></span>
+          <span
+            class="absolute top-0 left-0 w-17.5 h-15 border-t-[5px] border-l-[5px] border-red rounded-tl-4xl"
+          ></span>
+          <span
+            class="absolute bottom-0 right-0 w-17.5 h-15 border-b-[5px] border-r-[5px] border-red rounded-br-4xl"
+          ></span>
+          <span
+            class="absolute bottom-0 left-0 w-17.5 h-15 border-b-[5px] border-l-[5px] border-red rounded-bl-4xl"
+          ></span>
+          <div
+            class="flex flex-wrap blurred w-175 bg-primary m-auto rounded-lg"
+          >
+            <type-game></type-game>
+          </div>
+        </div>
+        <!-- Barre de difficulté -->
+        <div class="absolute top-1/4 right-[5%]">
+          <div class="flex items-center space-x-4">
+            <!-- Barre de difficulté avec dégradé -->
+            <div
+              class="h-85 w-[15px] rounded-ful l bg-gradient-to-b from-red-500 via-orange-500 to-green-500 rounded-3xl"
+            ></div>
+
+            <!-- Boutons à droite -->
+            <div class="flex flex-col justify-between h-85 py-2">
+              <img src="master.svg" alt="Master" class="select-none" />
+              <img src="extreme.svg" alt="Extreme" class="select-none" />
+              <img src="normal.svg" alt="Normal" class="select-none" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="grid grid-cols-3 w-full h-fit pb-7">
+      <span></span>
+      <button
+        class="bg-primary p-1 rounded-full blurred cursor-pointer mx-auto select-none"
+      >
+        <img src="restart.svg" alt="Restart" class="w-8" />
+      </button>
+      <button
+        class="mx-auto cursor-pointer cartoon w-10 border-2 border-green-900 rounded-full text-white bg-emerald-500 grid place-items-center"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-paintbrush-icon lucide-paintbrush"
+        >
+          <path d="m14.622 17.897-10.68-2.913" />
+          <path
+            d="M18.376 2.622a1 1 0 1 1 3.002 3.002L17.36 9.643a.5.5 0 0 0 0 .707l.944.944a2.41 2.41 0 0 1 0 3.408l-.944.944a.5.5 0 0 1-.707 0L8.354 7.348a.5.5 0 0 1 0-.707l.944-.944a2.41 2.41 0 0 1 3.408 0l.944.944a.5.5 0 0 0 .707 0z"
+          />
+          <path
+            d="M9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15"
+          />
+        </svg>
+      </button>
+    </footer>
+    <script type="module" src="src/functions/animations/anime.js"></script>
+    <script type="module" src="src/functions/Type-game/index.js"></script>
+  </body>
+  <!-- ************************************************************************************* -->
+
+  <!-- <body
+    class="h-screen font-[base] w-full bg-gradient-to-b from-stone-300/20 to-stone-400/80"
+  >
+    <header class="fixed w-full top-0">
+      <nav
+        class="flex justify-between items-center h-28 bg-gradient-to-t from-stone-100/0 to-stone-50"
+      >
+        <!-- <div class="relative -translate-x-full">
+          <svg width="300" height="200" viewBox="0 0 451 201">
+            <g filter="url(#filter0_di_226_154)">
+              <path
+                d="M62.1375 62.8764C56.4902 52.8771 63.7146 40.5 75.1984 40.5H356.198C362.405 40.5 367.97 44.3224 370.198 50.1153L389.167 99.4346C392.802 108.886 386.22 119.15 376.114 119.789L113.384 136.406C107.645 136.769 102.204 133.82 99.3761 128.813L62.1375 62.8764Z"
+                fill="#EFEEDC"
+              />
             </g>
-            <path
-              d="M30.0584 37.5C30.1412 37.5 30.2087 37.5672 30.205 37.65C30.1577 38.7006 29.6154 39.7003 28.6829 40.4463C27.7061 41.2277 26.3814 41.6667 25 41.6667C23.6187 41.6667 22.2939 41.2277 21.3172 40.4463C20.3847 39.7003 19.8423 38.7006 19.7951 37.65C19.7914 37.5672 19.8589 37.5 19.9417 37.5L25 37.5L30.0584 37.5Z"
-              fill="#F4D738" />
             <defs>
-              <filter id="filter0_d_237_363" x="3.05371" y="4.16666" width="43.8927" height="39.25"
-                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <filter
+                id="filter0_di_226_154"
+                x="0.176491"
+                y="-15.5"
+                width="450.002"
+                height="215.937"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
                 <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  result="hardAlpha" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
                 <feOffset dy="4" />
-                <feGaussianBlur stdDeviation="2" />
+                <feGaussianBlur stdDeviation="30" />
                 <feComposite in2="hardAlpha" operator="out" />
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_237_363" />
-                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_237_363" result="shape" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_226_154"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_226_154"
+                  result="shape"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dx="4" dy="-4" />
+                <feGaussianBlur stdDeviation="2" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="shape"
+                  result="effect2_innerShadow_226_154"
+                />
               </filter>
             </defs>
           </svg>
-        </button>
-        <a href="#" class="flex relative items-center scale-[0.58] select-none">
-          <div class="absolute top-3 left-5 flex items-center justify-center">
-            <svg class="size-14 z-20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="8" r="4" fill="#222222" />
+        </div> -->
+  <!-- <div class="flex items-center gap-20 mr-30">
+          <button
+            class="bg-emerald-500 p-2 border-2 border-green-900 cursor-pointer cartoon rounded-full -translate-y-52 anime-notification"
+          >
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_d_237_363)">
+                <path
+                  d="M12.5 16.6667C12.5 12.469 12.5 10.3702 13.2681 8.74621C14.0594 7.07307 15.4064 5.72608 17.0796 4.93474C18.7035 4.16666 20.8024 4.16666 25 4.16666C29.1976 4.16666 31.2965 4.16666 32.9204 4.93474C34.5936 5.72608 35.9406 7.07307 36.7319 8.74621C37.5 10.3702 37.5 12.469 37.5 16.6667V20.5682C37.5 22.7705 37.5 23.8716 37.7903 24.9196C38.0806 25.9676 38.6471 26.9118 39.7801 28.8002L41.9326 32.3877C42.7384 33.7306 43.1412 34.4021 42.854 34.9094C42.5668 35.4167 41.7837 35.4167 40.2176 35.4167H9.78247C8.21637 35.4167 7.43333 35.4167 7.1461 34.9094C6.85887 34.4021 7.26173 33.7306 8.06747 32.3877L10.22 28.8001C11.353 26.9118 11.9195 25.9676 12.2097 24.9196C12.5 23.8716 12.5 22.7705 12.5 20.5683V16.6667Z"
+                  fill="#EFEEDC"
+                />
+              </g>
               <path
-                d="M5.33788 17.3206C5.99897 14.5269 8.77173 13 11.6426 13H12.3574C15.2283 13 18.001 14.5269 18.6621 17.3206C18.79 17.8611 18.8917 18.4268 18.9489 19.0016C19.0036 19.5512 18.5523 20 18 20H6C5.44772 20 4.99642 19.5512 5.0511 19.0016C5.1083 18.4268 5.20997 17.8611 5.33788 17.3206Z"
-                fill="#7E869E" fill-opacity="0.25" />
+                d="M30.0584 37.5C30.1412 37.5 30.2087 37.5672 30.205 37.65C30.1577 38.7006 29.6154 39.7003 28.6829 40.4463C27.7061 41.2277 26.3814 41.6667 25 41.6667C23.6187 41.6667 22.2939 41.2277 21.3172 40.4463C20.3847 39.7003 19.8423 38.7006 19.7951 37.65C19.7914 37.5672 19.8589 37.5 19.9417 37.5L25 37.5L30.0584 37.5Z"
+                fill="#F4D738"
+              />
+              <defs>
+                <filter
+                  id="filter0_d_237_363"
+                  x="3.05371"
+                  y="4.16666"
+                  width="43.8927"
+                  height="39.25"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="4" />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_237_363"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_237_363"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
             </svg>
+          </button>
+          <a
+            href="#"
+            class="flex relative items-center justify-center translate-y-3 translate-x-80 anime-user"
+          >
+            <div class="absolute top-3 left-5 flex items-center justify-center">
+              <svg
+                class="size-14 z-20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="8" r="4" fill="#222222" />
+                <path
+                  d="M5.33788 17.3206C5.99897 14.5269 8.77173 13 11.6426 13H12.3574C15.2283 13 18.001 14.5269 18.6621 17.3206C18.79 17.8611 18.8917 18.4268 18.9489 19.0016C19.0036 19.5512 18.5523 20 18 20H6C5.44772 20 4.99642 19.5512 5.0511 19.0016C5.1083 18.4268 5.20997 17.8611 5.33788 17.3206Z"
+                  fill="#7E869E"
+                  fill-opacity="0.25"
+                />
+              </svg>
 
-            <p class="font-bold text-2xl text-stone-500 z-40">User</p>
-          </div>
-          <svg width="166" height="100" class="cartoon-user" viewBox="0 0 166 100" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_di_338_25)">
-              <path
-                d="M13.0548 16.2764C14.5302 8.49046 15.2679 4.59752 18.0431 2.29876C20.8184 0 24.7806 0 32.7051 0H136.412C144.063 0 147.888 0 150.624 2.18212C153.36 4.36424 154.21 8.09359 155.912 15.5523L162.504 44.4522C164.621 53.7361 165.68 58.378 163.44 61.8998C161.199 65.4216 156.546 66.4298 147.24 68.4463L26.5067 94.6065C13.1719 97.4959 6.50444 98.9406 2.65753 95.1928C-1.18938 91.445 0.0807869 84.7422 2.62111 71.3365L13.0548 16.2764Z" />
-              <path
-                d="M32.7051 1H136.412C140.262 1 143.06 1.0017 145.241 1.26553C147.395 1.52608 148.831 2.03151 150 2.96391C151.169 3.89631 151.982 5.18458 152.715 7.22637C153.457 9.29373 154.081 12.0213 154.937 15.7747L161.529 44.6746C162.594 49.3442 163.368 52.7484 163.61 55.4267C163.849 58.0761 163.55 59.8631 162.596 61.363C161.642 62.863 160.15 63.8912 157.649 64.7974C155.12 65.7134 151.709 66.4547 147.028 67.469L26.295 93.6292C19.5953 95.0809 14.681 96.143 10.9577 96.3908C7.25383 96.6373 4.97806 96.0574 3.35535 94.4765C1.73264 92.8956 1.09355 90.6358 1.2433 86.9267C1.39382 83.1983 2.32732 78.258 3.60363 71.5227L14.0373 16.4625C14.7797 12.5447 15.3212 9.69649 16.0138 7.53502C16.6979 5.39989 17.4957 4.05071 18.681 3.06888C19.8664 2.08706 21.3405 1.55446 23.5657 1.27981C25.8183 1.00178 28.7175 1 32.7051 1Z"
-                class="stroke-stone-400" stroke-width="3" />
-            </g>
+              <p class="font-bold text-2xl text-stone-500 z-40">User</p>
+            </div>
+            <svg
+              width="166"
+              height="100"
+              class="cartoon-user"
+              viewBox="0 0 166 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_di_338_25)">
+                <path
+                  d="M13.0548 16.2764C14.5302 8.49046 15.2679 4.59752 18.0431 2.29876C20.8184 0 24.7806 0 32.7051 0H136.412C144.063 0 147.888 0 150.624 2.18212C153.36 4.36424 154.21 8.09359 155.912 15.5523L162.504 44.4522C164.621 53.7361 165.68 58.378 163.44 61.8998C161.199 65.4216 156.546 66.4298 147.24 68.4463L26.5067 94.6065C13.1719 97.4959 6.50444 98.9406 2.65753 95.1928C-1.18938 91.445 0.0807869 84.7422 2.62111 71.3365L13.0548 16.2764Z"
+                />
+                <path
+                  d="M32.7051 1H136.412C140.262 1 143.06 1.0017 145.241 1.26553C147.395 1.52608 148.831 2.03151 150 2.96391C151.169 3.89631 151.982 5.18458 152.715 7.22637C153.457 9.29373 154.081 12.0213 154.937 15.7747L161.529 44.6746C162.594 49.3442 163.368 52.7484 163.61 55.4267C163.849 58.0761 163.55 59.8631 162.596 61.363C161.642 62.863 160.15 63.8912 157.649 64.7974C155.12 65.7134 151.709 66.4547 147.028 67.469L26.295 93.6292C19.5953 95.0809 14.681 96.143 10.9577 96.3908C7.25383 96.6373 4.97806 96.0574 3.35535 94.4765C1.73264 92.8956 1.09355 90.6358 1.2433 86.9267C1.39382 83.1983 2.32732 78.258 3.60363 71.5227L14.0373 16.4625C14.7797 12.5447 15.3212 9.69649 16.0138 7.53502C16.6979 5.39989 17.4957 4.05071 18.681 3.06888C19.8664 2.08706 21.3405 1.55446 23.5657 1.27981C25.8183 1.00178 28.7175 1 32.7051 1Z"
+                  class="stroke-stone-400"
+                  stroke-width="3"
+                />
+              </g>
+            </svg>
+          </a>
+        </div> -->
+  <!-- </nav>
+    </header>
+
+    <main class="flex w-full h-full items-center justify-center">
+  
+      <section
+        class="flex flex-col items-center h-1/2 w-2/3 justify-center p-8"
+      >
+        <div id="info"></div>
+        <div id="timer"></div>
+        <type-game></type-game>
+      </section>
+    </main>
+    <footer class="fixed bottom-6 right-18">
+      <div class="cartoon translate-x-80 anime-footer">
+        <div class="flex items-center gap-3 absolute bottom-6 right-5">
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 61 61"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.4999 30.5862L15.4999 12.8531"
+              stroke="#EFEEDC"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M30.4999 20.4529L30.4999 12.853"
+              stroke="#EFEEDC"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M15.4999 48.3192L15.4999 40.7193"
+              stroke="#EFEEDC"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M45.4999 48.3192L45.4999 43.2526"
+              stroke="#EFEEDC"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M30.4999 48.3192L30.4999 30.5861"
+              stroke="#EFEEDC"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M25.4999 20.4529H35.4999"
+              stroke="#EFEEDC"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M10.4999 40.7194H20.4999"
+              stroke="#EFEEDC"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M40.4999 43.2527H50.4999"
+              stroke="#EFEEDC"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M45.4999 33.1194L45.4999 12.853"
+              stroke="#EFEEDC"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
           </svg>
-        </a>
-      </div>
-    </nav>
-  </header>
-
-  <main class="flex-grow">
-    <div class="w-full h-full">
-      <!-- Button option -->
-      <div class="flex items-center justify-evenly">
-        <button class="btn py-2 pr-2.5 pl-3.5 select-none">
-          <p>With</p>
-          <img src="arrow_drop_down.svg" alt="Arrow Drop Down">
-        </button>
-        <button class="btn py-2 pr-2.5 pl-3.5 select-none">
-          <p class="-translate-y-0.5">Type</p>
-          <img src="arrow_drop_down.svg" alt="Arrow Drop Down">
-        </button>
-      </div>
-      <!-- Timer -->
-
-      <div class="w-full -mt-6 flex justify-center relative after:-z-2 transition-colors select-none
-                    after:absolute after:left-1/2 after:top-1/2 after:w-160 after:h-3 after:border-3 
-                    after:border-[#7FBC8C] after:bg-primary after:-translate-x-1/2 after:rounded-full 
-                    before:-z-1  before:w-160 before:h-3 before:bg-[#7FBC8C] before:absolute
-                    before:top-1/2 before:left-1/2 before:-translate-x-1/2 hover:before:w-22.5
-                    before:rounded-full before:transition-normal before:ease-linear before:duration-15000">
-        <img src="bg-timer.svg" alt="Timer" class="w-30">
-        <p class="absolute font-[ZCOOL_KuaiLe] text-2xl text-secondary translate-y-4">00:15</p>
-      </div>
-
-      <!-- Langage / Option-timer -->
-      <div class="flex-1 flex justify-around -translate-y-4">
-        <button class="btn p-1 bg-transparent! text-secondary! select-none">
-          <img src="language.svg" alt="Language">
-          <p class="font-semibold">English</p>
-        </button>
-        <button class="btn p-1 bg-transparent! text-secondary! select-none">
-          <img src="time.svg" alt="Time">
-          <p class="font-semibold">Time</p>
-        </button>
-      </div>
-    </div>
-
-    <!-- Typing -->
-    <div class="w-200 h-75 mx-auto mt-2">
-      <div class="w-full h-full relative flex p-7">
-        <span class="absolute top-0 right-0 w-17.5 h-15 border-t-[5px] border-r-[5px] border-red rounded-tr-4xl"></span>
-        <span class="absolute top-0 left-0 w-17.5 h-15 border-t-[5px] border-l-[5px] border-red rounded-tl-4xl"></span>
-        <span class="absolute bottom-0 right-0 w-17.5 h-15 border-b-[5px] border-r-[5px] border-red rounded-br-4xl"></span>
-        <span class="absolute bottom-0 left-0 w-17.5 h-15 border-b-[5px] border-l-[5px] border-red rounded-bl-4xl"></span>
-        <div class="blurred w-175 h-55 bg-primary m-auto rounded-lg">
-          <!-- Lorem Ipsum -->
-          <!-- <p>Lorem Ipsum</p> -->
+          <h2 class="font-bold text-2xl text-green-50">preference</h2>
         </div>
+        <svg
+          width="220"
+          height="96"
+          viewBox="0 0 278 96"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g filter="url(#filter0_i_254_493)">
+            <path
+              class="fill-emerald-800"
+              d="M8.39914 5.28744C33.5844 -5.07331 139.527 2.61209 236.008 4.76932C256.022 5.21681 266.029 5.44056 272.014 11.5616C278 17.6826 278 27.5509 278 47.2874V57.6504C278 68.3084 278 73.6375 274.757 77.0989C271.514 80.5603 266.196 80.9067 255.56 81.5996L43.516 95.4139C39.102 95.7015 36.895 95.8452 34.9491 94.8647C33.0033 93.8842 31.8474 92.0895 29.5355 88.5C16.6737 68.5304 -15.0394 14.9296 8.39914 5.28744Z"
+            />
+          </g>
+          <path
+            d="M9.16003 7.13705C15.0928 4.6964 26.1037 3.23412 41.1142 2.52998C56.0258 1.83049 74.5901 1.88598 95.4248 2.33367C115.818 2.77188 138.348 3.58482 161.71 4.42777L163.211 4.48191C187.102 5.34382 211.827 6.22916 235.963 6.76882C246.025 6.99379 253.377 7.16213 258.97 8.01503C264.515 8.86056 268.022 10.3392 270.584 12.9599C273.151 15.5848 274.549 19.0928 275.269 24.579C275.996 30.1178 276 37.3639 276 47.2874V57.6504C276 63.034 275.996 66.8765 275.612 69.8138C275.234 72.694 274.521 74.4251 273.297 75.7314C272.073 77.0376 270.392 77.862 267.543 78.4254C264.637 79 260.802 79.2538 255.43 79.6038L43.386 93.4181C41.1388 93.5645 39.6025 93.6622 38.3822 93.6163C37.2119 93.5722 36.4824 93.3978 35.8492 93.0787C34.4995 92.3986 33.6449 91.1867 31.217 87.417C24.8006 77.4547 13.7497 59.2031 7.22037 42.3002C3.94575 33.8231 1.88974 25.8862 2.00456 19.5854C2.06161 16.4548 2.65347 13.8415 3.79801 11.7848C4.92285 9.76352 6.63763 8.17472 9.16003 7.13705Z"
+            class="stroke-emerald-950"
+            stroke-width="4"
+          />
+          <defs>
+            <filter
+              id="filter0_i_254_493"
+              x="0"
+              y="0"
+              width="278"
+              height="95.6276"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dx="10" dy="10" />
+              <feComposite
+                in2="hardAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+              />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="shape"
+                result="effect1_innerShadow_254_493"
+              />
+            </filter>
+          </defs>
+        </svg>
       </div>
-      <!-- Barre de difficulté -->
-      <div class="absolute top-1/4 right-[5%]">
-        <div class="flex items-center space-x-4">
-          <!-- Barre de difficulté avec dégradé -->
-          <div class="h-85 w-[15px] rounded-ful l bg-gradient-to-b from-red-500 via-orange-500 to-green-500 rounded-3xl"></div>
-        
-          <!-- Boutons à droite -->
-          <div class="flex flex-col justify-between h-85 py-2">
-            <img src="master.svg" alt="Master" class="select-none">
-            <img src="extreme.svg" alt="Extreme" class="select-none">
-            <img src="normal.svg" alt="Normal" class="select-none">
-          </div>
-        </div> 
-      </div>
-    </div>
-  </main>
-
-  <footer class="grid grid-cols-3 w-full h-fit pb-7">
-    <span></span>
-    <button class="bg-primary p-1 rounded-full blurred cursor-pointer mx-auto select-none">
-      <img src="restart.svg" alt="Restart" class="w-8">
-    </button>
-    <button class="mx-auto cursor-pointer cartoon w-10 border-2 border-green-900 rounded-full text-white bg-emerald-500  grid place-items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-paintbrush-icon lucide-paintbrush"><path d="m14.622 17.897-10.68-2.913"/><path d="M18.376 2.622a1 1 0 1 1 3.002 3.002L17.36 9.643a.5.5 0 0 0 0 .707l.944.944a2.41 2.41 0 0 1 0 3.408l-.944.944a.5.5 0 0 1-.707 0L8.354 7.348a.5.5 0 0 1 0-.707l.944-.944a2.41 2.41 0 0 1 3.408 0l.944.944a.5.5 0 0 0 .707 0z"/><path d="M9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15"/></svg>
-    </button>
-  </footer>
-</body>
+    </footer>
+    <script type="module" src="src/functions/animations/anime.js"></script>
+    <script type="module" src="src/functions/Type-game/index.js"></script>
+  </body> -->
 </html>

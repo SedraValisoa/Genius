@@ -5,8 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devUI" : "npx @tailwindcss/cli -i ./assets/style/style.css -o ./assets/style/output.css --watch"
-  },  
+    "devUI": "npx @tailwindcss/cli -i ./assets/style/style.css -o ./assets/style/output.css --watch"
+  },
   "keywords": [
     "typing",
     "game",
@@ -16,6 +16,9 @@
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.1",
+    "animejs": "^4.0.0",
+    "chart.js": "^4.4.8",
+    "chartjs-plugin-style": "^0.5.0",
     "tailwindcss": "^4.1.1"
   }
 }
