@@ -9,8 +9,13 @@
 }
 
 @font-face {
-    font-family: 'archivo';
-    src: url(../fonts/Archivo-VariableFont_wdth\,wght.ttf);
+    font-family: 'Jet';
+    src: url(../fonts/JetBrainsMono-Regular.woff2);
+}
+
+@font-face {
+    font-family: 'Zcool';
+    src: url(../fonts/ZCOOLKuaiLe-Regular.ttf);
 }
 
 body {
@@ -18,29 +23,192 @@ body {
 }
 
 .cartoon {
+    filter: drop-shadow(2px 4px 0px var(--color-green-900));
+    transition: all 0.15s ease;
+}
+
+
+
+nav:has(.cartoon:hover) .cartoon,
+footer:has(.cartoon:hover) .cartoon {
+    background: var(--color-green-700);
+    scale: 1.05;
+}
+
+
+.cartoon:hover {
     filter: drop-shadow(0 0 0);
     transition: all 0.15s ease;
 }
 
 .cartoon-user {
-    filter: drop-shadow(0 0 0);
+    filter: drop-shadow(2px 4px 0px var(--color-stone-700));
     transition: all 0.15s ease;
 }
 
-
-.cartoon:hover {
-    filter: drop-shadow(2px 4px 0px var(--color-green-900));
-    background: var(--color-emerald-400);
-}
 
 .cartoon-user path {
     fill: var(--color-orange-50);
 }
 
+.cartoon-menu {
+    transition: all 0.15s ease;
+    filter: drop-shadow(2px 4px 0px var(--color-sky-950));
+
+}
+
+
+li:has(svg:hover) {
+    transition: all 0.15s ease;
+    scale: 1.03;
+}
+
+svg:hover~.cartoon-menu {
+    filter: drop-shadow(0 0 0);
+}
+
 a:hover .cartoon-user {
-    filter: drop-shadow(2px 4px 0px var(--color-orange-950));
+    transition: all 0.15s ease;
+    scale: 1.05;
+    filter: drop-shadow(0 0 0);
 }
 
 .logo path {
     cursor: pointer;
+}
+
+
+
+
+
+
+#header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 6px 30px;
+}
+
+
+
+#info {
+    color: var(--primaryColor);
+}
+
+
+div#game {
+    display: flex;
+    font-family: 'Jet', monospace;
+    position: relative;
+    line-height: 35px !important;
+    overflow: hidden;
+    user-select: none;
+}
+
+div#game:focus {
+    outline: 0;
+}
+
+#words {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5ch 0.5ch;
+    color: var(--color-stone-800);
+}
+
+#game:focus #words {
+    filter: blur(0);
+}
+
+#focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 18;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+}
+
+#game:focus #focus {
+    display: none;
+}
+
+div.word {
+    display: flex;
+    margin: 0 5px;
+    /* box-shadow: inset 0 0 10px var(--color-black); */
+    padding-bottom: 0.4ch;
+    color: var(--color-stone-800);
+}
+
+.letter.correct {
+    color: var(--color-emerald-800);
+}
+
+.letter.incorrect {
+    color: var(--color-red);
+}
+
+.letter.invalided {
+    position: relative;
+    color: var(--color-stone-400);
+    font-style: italic;
+}
+
+.letter.invalided::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-red);
+}
+
+
+
+#cursor {
+    display: none;
+    width: 0.08ch;
+    height: 0.8ch;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent);
+    position: fixed;
+    left: 0;
+    transition: all 0.15s ease;
+}
+
+#game:focus #cursor {
+    display: flex;
+    scale: 1.5;
+    top: 0
+}
+
+#game.over #words {
+    opacity: .5;
+    filter: blur(0px);
+}
+
+
+button:disabled {
+    filter: blur(8px);
+}
+
+.level,
+.btn-remove {
+    display: none !important;
+}
+
+
+.typed {
+    box-shadow: inset 4px -4px 0 var(--color-stone-300);
+}
+
+.typed-conteiner {
+    height: calc(65vh - 50px);
 }
