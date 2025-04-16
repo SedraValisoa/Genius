@@ -1,7 +1,12 @@
 import { addClass, removeClass } from "../getClassName.js";
+import {
+  createSpring,
+  animate,
+} from "../../../../node_modules/animejs/lib/anime.esm.js";
+
 import { words } from "../words.js";
 
-let gameTime = 30 * 1000;
+let gameTime = 15 * 1000;
 const keyType = [];
 const keyExpected = [];
 export const scoreWord = [];
@@ -12,12 +17,11 @@ export default class typeGame extends HTMLElement {
     super();
     this.timer = 0;
     this.wordsCount = words.length;
-    this.className = this.getAttribute("class");
     this.gameStart = false;
     this.document = document;
     this.secondLeft = 0;
+    this.reset = this.document.querySelector(".reset");
     this.onGame = this.onGame.bind(this);
-    this.info = document.getElementById("info");
     this.gameTime = gameTime;
     this.game = document.createElement("div");
     this.cursor = document.createElement("div");
@@ -26,27 +30,37 @@ export default class typeGame extends HTMLElement {
   }
   addElement() {
     this.game.id = "game";
-    addClass(
-      this.game,
-      "flex flex-wrap bg-amber-200 px-4 py-3 rounded-lg h-full font-[base]"
-    );
+    addClass(this.game, "w-full pt-5 rounded-lg font-[base]");
     this.cursor.id = "cursor";
-    addClass(this.cursor, "bg-amber-300 w-1 z-10 h-5 rounded-ms animate-ping");
+    addClass(this.cursor, " w-20 z-50 h-50 rounded-ms");
     this.words.id = "words";
     this.focus.id = "focus";
     this.focus.addEventListener("click", () => {
-      this.focus.style.display = "none";
-      this.cursor.style.display = "block";
-      this.disconnectedCallback();
+      addClass(this.focus, "hidden");
+      removeClass(this.focus, "flex");
+      this.reset.removeAttribute("disabled");
+      removeClass(this.document.querySelector(".typed-conteiner"), "w-1/2");
+      addClass(this.document.querySelector(".typed-conteiner"), "w-8/9");
+      this.cursor.style.display = "flex";
+      this.cursor.style.top = this.getBoundingClientRect()["top"] + 40 + "px";
+      this.cursor.style.left =
+        this.words.firstChild.firstChild.getBoundingClientRect()["left"] -
+        268 +
+        "px";
     });
     this.game.appendChild(this.cursor);
     this.game.addEventListener("mouseleave", () => {
-      this.focus.style.display = "block";
-      this.cursor.style.display = "none";
+      addClass(this.focus, "flex");
+      removeClass(this.focus, "hidden");
+      addClass(this.cursor, "hidden");
       clearInterval(this.timer);
     });
     this.game.appendChild(this.words);
     this.focus.textContent = "click here to focus";
+    addClass(
+      this.focus,
+      "flex flex-col items-center pt-34.5 text-3xl font-bold text-amber-600"
+    );
     this.game.appendChild(this.focus);
     return this.game;
   }
@@ -56,35 +70,36 @@ export default class typeGame extends HTMLElement {
     return words[randomIndex - 1];
   }
   formatWord(word) {
-    return /*html*/ `<div class="word"><span class="letter">${word
+    return /*html*/ `<div class="word "><span class="letter  text-3xl">${word
       .split("")
-      .join('</span><span class="letter">')}</span></div>`;
+      .join('</span><span class="letter text-3xl">')}</span></div>`;
   }
 
   connectedCallback() {
     this.appendChild(this.addElement());
     this.gameStart = false;
-    this.gameTime = 30 * 1000;
+    this.gameTime = gameTime;
     clearInterval(this.timer);
     this.startTime = new Date().getTime();
     this.words.innerHTML = "";
     for (let i = 0; i < 200; i++) {
       this.words.innerHTML += this.formatWord(this.randomWord());
     }
-    this.info.innerHTML = String(this.gameTime / 1000);
+    document.getElementById("timer").innerHTML = String(this.gameTime / 1000);
     removeClass(document.querySelector(".word"), "current");
     removeClass(document.querySelector(".letter"), "current");
     addClass(document.querySelector(".word"), "current");
     addClass(document.querySelector(".letter"), "current");
     removeClass(document.getElementById("game"), "over");
     this.timer = null;
-    this.cursor.style.top =
-      this.words.firstChild.getBoundingClientRect()["top"] + "px";
+    this.cursor.style.top = this.getBoundingClientRect()["top"] + "px";
+
     this.cursor.style.left =
-      this.words.firstChild.getBoundingClientRect()["left"] + "px";
+      this.words.firstChild.firstChild.getBoundingClientRect()["left"] + "px";
     this.document.addEventListener("keydown", (ev) => {
       this.onGame(ev);
     });
+    this.reset.addEventListener("click", () => this.disconnectedCallback());
   }
   disconnectedCallback() {
     keyType.splice(0, keyType.length - 1);
@@ -114,7 +129,6 @@ export default class typeGame extends HTMLElement {
   gameOver() {
     clearInterval(this.timer);
     addClass(this.game, "over");
-    this.info.innerHTML += `Game Over`;
     window.removeEventListener("keydown", this.onGame);
     return;
   }
@@ -162,7 +176,10 @@ export default class typeGame extends HTMLElement {
       keyExpected
     );
 
-    if (this.document.querySelector("#game.over")) {
+    if (
+      this.document.querySelector("#game.over") ||
+      !this.focus.className.includes("hidden")
+    ) {
       this.cursor.style.display = "none";
       return;
     }
@@ -198,7 +215,7 @@ export default class typeGame extends HTMLElement {
         if (getLetterErrorLength < 5) {
           const incorrectLetter = document.createElement("span");
           incorrectLetter.innerHTML = key;
-          incorrectLetter.className = "letter incorrect extra";
+          incorrectLetter.className = "letter incorrect extra text-3xl";
           currentWord.appendChild(incorrectLetter);
           extra++;
         }
@@ -276,19 +293,25 @@ export default class typeGame extends HTMLElement {
     // move cursor
     const nextLetter = this.words.querySelector(".letter.current");
     const nextWord = this.words.querySelector(".word.current");
-
+    const position = nextLetter || nextWord;
     this.cursor.style.top =
-      (nextLetter || nextWord)?.getBoundingClientRect().top + 2 + "px";
-
+      position?.getBoundingClientRect().top -
+      (position == nextLetter ? 2 : 0) +
+      "px";
     this.cursor.style.left =
-      (nextLetter || nextWord)?.getBoundingClientRect()[
-        nextLetter ? "left" : "right"
-      ] + "px";
+      position?.getBoundingClientRect()[nextLetter ? "left" : "right"] -
+      2 +
+      "px";
 
     if (!isLetter && !isBackspace && !isSpace) {
       return;
     }
-    this.info.innerHTML = `WPM: ${WPM} : ACCURECY : ${ACCURACY} \n ${correct}/${incorrect}/${extra}/${missed}/${corrections}`;
+    if (isLetter) {
+      animate(currentLetter.previousSibling, {
+        translateY: ["0ch", "-0.5ch", "0ch"],
+        ease: "in",
+      });
+    }
   }
 }
 function getCurrentStats() {
