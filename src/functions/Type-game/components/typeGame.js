@@ -2,11 +2,13 @@ import { addClass, removeClass } from "../getClassName.js";
 import {
   createSpring,
   animate,
+  stagger,
+  createTimer,
 } from "../../../../node_modules/animejs/lib/anime.esm.js";
 
 import { words } from "../words.js";
 
-let gameTime = 15 * 1000;
+const gameTime = 15 * 1000;
 const keyType = [];
 const keyExpected = [];
 export const scoreWord = [];
@@ -19,7 +21,7 @@ export default class typeGame extends HTMLElement {
     this.wordsCount = words.length;
     this.gameStart = false;
     this.document = document;
-    this.secondLeft = 0;
+    this.setTimer = null;
     this.reset = this.document.querySelector(".reset");
     this.onGame = this.onGame.bind(this);
     this.gameTime = gameTime;
@@ -30,40 +32,57 @@ export default class typeGame extends HTMLElement {
   }
   addElement() {
     this.game.id = "game";
-    addClass(this.game, "w-full pt-5 rounded-lg font-[base]");
+    addClass(this.game, "w-full pt-5 mt-8 rounded-lg font-[base]");
     this.cursor.id = "cursor";
     addClass(this.cursor, " w-20 z-50 h-50 rounded-ms");
     this.words.id = "words";
     this.focus.id = "focus";
-    this.focus.addEventListener("click", () => {
-      addClass(this.focus, "hidden");
-      removeClass(this.focus, "flex");
-      this.reset.removeAttribute("disabled");
-      removeClass(this.document.querySelector(".typed-conteiner"), "w-1/2");
-      addClass(this.document.querySelector(".typed-conteiner"), "w-8/9");
-      this.cursor.style.display = "flex";
-      this.cursor.style.top = this.getBoundingClientRect()["top"] + 40 + "px";
-      this.cursor.style.left =
-        this.words.firstChild.firstChild.getBoundingClientRect()["left"] -
-        268 +
-        "px";
-    });
+    this.focus.addEventListener("click", this.focusClick);
     this.game.appendChild(this.cursor);
-    this.game.addEventListener("mouseleave", () => {
-      addClass(this.focus, "flex");
-      removeClass(this.focus, "hidden");
-      addClass(this.cursor, "hidden");
-      clearInterval(this.timer);
-    });
+    this.game.addEventListener("mouseleave", this.mouseLeave);
     this.game.appendChild(this.words);
     this.focus.textContent = "click here to focus";
     addClass(
       this.focus,
-      "flex flex-col items-center pt-34.5 text-3xl font-bold text-amber-600"
+      "grid place-items-center text-3xl font-bold text-amber-600"
     );
     this.game.appendChild(this.focus);
     return this.game;
   }
+
+  focusClick = () => {
+    addClass(this.focus, "hidden");
+    removeClass(this.focus, "flex");
+    removeClass(this.document.querySelector(".typed-conteiner"), "w-1/2");
+    addClass(this.document.querySelector(".typed-conteiner"), "w-8/9");
+    [...this.document.querySelectorAll(".btn-remove")].map(
+      (el) => (el.style.display = "none")
+    );
+    [...this.document.querySelectorAll(".level")].map(
+      (el) => (el.style.display = "none")
+    );
+  };
+  mouseLeave = () => {
+    this.pauseTimer();
+    removeClass(this.document.querySelector(".typed-conteiner"), "w-8/9");
+    addClass(this.document.querySelector(".typed-conteiner"), "w-1/2");
+    addClass(this.focus, "flex");
+    this.reset.removeAttribute("disabled");
+    removeClass(this.focus, "hidden");
+    this.cursor.style.display = "none";
+    [...this.document.querySelectorAll(".btn-remove")].map(
+      (el) => (el.style.display = "flex")
+    );
+    [...this.document.querySelectorAll(".level")].map(
+      (el) => (el.style.display = "flex")
+    );
+    this.document
+      .querySelector("#timeBar")
+      .style.setProperty("--widthBar", "635px");
+    this.document
+      .querySelector("#timeBar")
+      .style.setProperty("--bg-bar", "#7FBC8C");
+  };
 
   randomWord() {
     const randomIndex = Math.ceil(Math.random() * this.wordsCount);
@@ -120,45 +139,27 @@ export default class typeGame extends HTMLElement {
     addClass(document.querySelector(".word"), "current");
     addClass(document.querySelector(".letter"), "current");
     removeClass(document.getElementById("game"), "over");
-    this.timer = null;
+    removeClass(this.game, "over");
+    this.document
+      .querySelector("#timeBar")
+      .style.setProperty("--bg-bar", "#7FBC8C");
     this.cursor.style.top =
       this.words.firstChild.getBoundingClientRect()["top"] + "px";
     this.cursor.style.left =
       this.words.firstChild.getBoundingClientRect()["left"] + "px";
   }
   gameOver() {
-    clearInterval(this.timer);
     addClass(this.game, "over");
     window.removeEventListener("keydown", this.onGame);
+    this.cursor.style.display = "none";
+    window.removeEventListener("click", this.focusClick);
+    window.location.href = "pages/score.html";
     return;
   }
 
-  setTimer = () => {
-    const startTime = this.startTime;
-    this.timer = setInterval(() => {
-      if (!this.gameStart) {
-        this.gameStart = true;
-        startTime = new Date().getTime();
-      }
-
-      const currentTime = new Date().getTime();
-      const msPassed = currentTime - startTime;
-
-      const sPassed = Math.round(msPassed / 1000);
-
-      const sLeft = Math.round(this.gameTime / 1000 - sPassed);
-      this.secondLeft = sPassed;
-      if (sLeft <= 0) {
-        this.gameOver();
-        return;
-      }
-
-      document.getElementById("timer").innerHTML = sLeft + "";
-    }, 1000);
-  };
-
+  pauseTimer = () => this.setTimer?.pause();
+  resumeTimer = () => this.setTimer?.resume();
   onGame(ev) {
-    this.startTime = Date.now();
     const key = ev.key;
     const currentWord = this.game.querySelector(".word.current");
     const currentLetter = this.game.querySelector(".letter.current");
@@ -169,6 +170,8 @@ export default class typeGame extends HTMLElement {
     const isFirstLetter = currentLetter === currentWord?.firstChild;
     const extraWord = currentWord?.querySelector(".extra");
     let getLetterErrorLength = currentWord?.querySelectorAll(".extra").length;
+    this.startTime = Date.now();
+    this.cursor.style.display = "flex";
 
     const [WPM, ACCURACY] = getCurrentStats();
     const { correct, incorrect, corrections } = calculateKeyStats(
@@ -182,10 +185,6 @@ export default class typeGame extends HTMLElement {
     ) {
       this.cursor.style.display = "none";
       return;
-    }
-    if (!this.gameStart) {
-      this.gameStart = true;
-      this.setTimer();
     }
 
     keyType.push(key);
@@ -202,8 +201,9 @@ export default class typeGame extends HTMLElement {
         missed,
         second: this.secondLeft,
       });
-      console.log(scoreWord);
     }
+    console.log(scoreWord);
+
     if (isLetter) {
       if (currentLetter) {
         addClass(currentLetter, key === expected ? "correct" : "incorrect");
@@ -219,6 +219,39 @@ export default class typeGame extends HTMLElement {
           currentWord.appendChild(incorrectLetter);
           extra++;
         }
+      }
+      if (!this.gameStart) {
+        this.gameStart = true;
+        this.setTimer = createTimer({
+          duration: 1000,
+          loop: true,
+          frameRate: 30,
+          onLoop: (self) => {
+            let sLeft = Math.round(
+              this.gameTime / 1000 - self._currentIteration
+            );
+            if (sLeft <= 0) {
+              return this.gameOver();
+            }
+            let initialeWith = 325;
+            let widthOfbar = (sLeft * parseInt(initialeWith, 10)) / 100 + "%";
+            console.log(widthOfbar);
+            if ((sLeft * parseInt(initialeWith, 10)) / 100 < 30) {
+              this.document
+                .querySelector("#timeBar")
+                .style.setProperty("--bg-bar", "#F4D738");
+            }
+            if ((sLeft * parseInt(initialeWith, 10)) / 100 < 20) {
+              this.document
+                .querySelector("#timeBar")
+                .style.setProperty("--bg-bar", "#F42738");
+            }
+            this.document
+              .querySelector("#timeBar")
+              .style.setProperty("--widthBar", widthOfbar);
+            return (document.getElementById("timer").innerHTML = sLeft);
+          },
+        });
       }
     }
 
@@ -303,14 +336,15 @@ export default class typeGame extends HTMLElement {
       2 +
       "px";
 
-    if (!isLetter && !isBackspace && !isSpace) {
-      return;
-    }
     if (isLetter) {
-      animate(currentLetter.previousSibling, {
+      animate(currentLetter, {
         translateY: ["0ch", "-0.5ch", "0ch"],
-        ease: "in",
+        delay: stagger(150),
+        duration: 300,
       });
+      if (this.pauseTimer) {
+        this.resumeTimer();
+      }
     }
   }
 }
