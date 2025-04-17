@@ -13,6 +13,11 @@
     src: url(../fonts/Archivo-VariableFont_wdth\,wght.ttf);
 }
 
+@font-face {
+    font-family: 'lexen';
+    src: url(../fonts/LexendDeca-Regular.woff2);
+}
+
 body {
     background: url("./../image/Background.png") center/cover no-repeat;
 }

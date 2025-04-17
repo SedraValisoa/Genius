@@ -6,6 +6,7 @@
     --color-primary: #EFEEDC;
     --color-secondary: #2C506D;
     --color-red: #BD7D7D;
+    --color-green: #7FBC8C;
 }
 
 body {
@@ -32,4 +33,20 @@ body {
 
 .blurred {
     box-shadow: 0 0 20px 20px #EFEEDC;
+}
+
+
+.setting-btn {
+    padding: 15px;
+    background: white;
+    cursor: pointer;
+    border-radius: 15px;
+    color: #656566;
+    font-size: 1.1em;
+    transition: 0.3s ease;
+    font-family: 'lexen';
+    width: 200px;
+    &:hover {
+        background-color: #e0e0e0;
+    }
 }
