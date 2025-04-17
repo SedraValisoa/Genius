@@ -502,11 +502,12 @@
         <!-- Timer -->
 
         <div
-          class="w-full -mt-6 flex justify-center relative after:-z-2 transition-colors select-none after:absolute after:left-1/2 after:top-1/2 after:w-160 after:h-3 after:border-3 after:border-[#7FBC8C] after:bg-primary after:-translate-x-1/2 after:rounded-full before:-z-1 before:w-160 before:h-3 before:bg-[#7FBC8C] before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 hover:before:w-22.5 before:rounded-full before:transition-normal before:ease-linear before:duration-15000"
+          id="timeBar"
+          class="w-full -mt-6 flex justify-center relative after:-z-2 select-none after:absolute after:left-1/2 after:top-1/2 after:w-160 after:h-3 after:-translate-x-1/2 after:rounded-full before:-z-1 before:w-160 before:h-3 before:bg-[#7FBC8C] before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 hover:before:w-22.5 before:rounded-full before:transition-normal before:ease-linear before:duration-15000"
         >
           <svg
             viewBox="0 0 198 121"
-            class="size-28 translate-y-2"
+            class="size-28 translate-y-2 switchTimer"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -580,9 +581,7 @@
           <p
             id="timer"
             class="absolute font-[Zcool] text-3xl translate-y-10 text-secondary"
-          >
-            30
-          </p>
+          ></p>
         </div>
 
         <!-- Langage / Option-timer -->
@@ -721,10 +720,10 @@
     </main>
     <footer class="grid grid-cols-3 w-full h-fit pb-7">
       <div
-        class="flex text-2xl text-center font-[Zcool] text-secondary items-center anime-footer-left"
+        class="flex text-sm! text-center font-[Zcool] text-secondary items-center anime-footer-left"
       >
         <p
-          class="bg-primary px-4 py-1 cartoon-user border-2 border-stone-400 rounded-3xl"
+          class="bg-primary px-4 py-1 cartoon-user border-2 border-stone-400 rounded-xl"
         >
           v.1.0.0
         </p>
