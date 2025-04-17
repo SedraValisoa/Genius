@@ -18,6 +18,11 @@
     src: url(../fonts/ZCOOLKuaiLe-Regular.ttf);
 }
 
+@font-face {
+    font-family: 'archivo';
+    src: url(../fonts/Archivo-VariableFont_wdth\,wght.ttf);
+}
+
 :root {
     --widthBar: 635px;
     --bg-bar: #7FBC8C;
