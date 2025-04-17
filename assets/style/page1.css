@@ -27,9 +27,9 @@ body {
     background: url("./../image/Background.png") center/cover no-repeat;
 }
 
-.cartoon {
+.cartoon:hover {
+    background: var(--color-emerald-400);
     filter: drop-shadow(2px 4px 0px var(--color-green-900));
-    scale: 1.05;
     transition: all 0.15s ease;
 }
 
@@ -41,13 +41,13 @@ footer:has(.cartoon:hover) .cartoon {
 }
 
 
-.cartoon:hover {
+.cartoon {
     filter: drop-shadow(0 0 0);
     transition: all 0.15s ease;
 }
 
 .cartoon-user {
-    filter: drop-shadow(2px 4px 0px var(--color-stone-700));
+    filter: drop-shadow(0 0 0);
     transition: all 0.15s ease;
 }
 
@@ -75,7 +75,7 @@ svg:hover~.cartoon-menu {
 a:hover .cartoon-user {
     transition: all 0.15s ease;
     scale: 1.05;
-    filter: drop-shadow(0 0 0);
+    filter: drop-shadow(2px 4px 0px var(--color-stone-700));
 }
 
 .logo path {
