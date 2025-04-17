@@ -18,12 +18,18 @@
     src: url(../fonts/ZCOOLKuaiLe-Regular.ttf);
 }
 
+:root {
+    --widthBar: 635px;
+    --bg-bar: #7FBC8C;
+}
+
 body {
     background: url("./../image/Background.png") center/cover no-repeat;
 }
 
 .cartoon {
     filter: drop-shadow(2px 4px 0px var(--color-green-900));
+    scale: 1.05;
     transition: all 0.15s ease;
 }
 
@@ -32,7 +38,6 @@ body {
 nav:has(.cartoon:hover) .cartoon,
 footer:has(.cartoon:hover) .cartoon {
     background: var(--color-green-700);
-    scale: 1.05;
 }
 
 
@@ -98,10 +103,10 @@ a:hover .cartoon-user {
 div#game {
     display: flex;
     font-family: 'Jet', monospace;
-    position: relative;
     line-height: 35px !important;
-    overflow: hidden;
+    display: -webkit-box;
     user-select: none;
+    transition: all 0.15s ease;
 }
 
 div#game:focus {
@@ -111,6 +116,7 @@ div#game:focus {
 #words {
     position: relative;
     display: flex;
+    height: calc((100vh /3) + 45px);
     flex-wrap: wrap;
     padding: 0.5ch 0.5ch;
     color: var(--color-stone-800);
@@ -179,7 +185,6 @@ div.word {
     justify-content: center;
     background: var(--color-accent);
     position: fixed;
-    left: 0;
     transition: all 0.15s ease;
 }
 
@@ -199,16 +204,21 @@ button:disabled {
     filter: blur(8px);
 }
 
-.level,
+/* .level,
 .btn-remove {
     display: none !important;
-}
+} */
 
 
 .typed {
+    position: relative;
     box-shadow: inset 4px -4px 0 var(--color-stone-300);
 }
 
-.typed-conteiner {
-    height: calc(65vh - 50px);
+
+#timeBar::before {
+    transition: all .5s ease;
+    width: var(--widthBar);
+    max-width: 640px;
+    background: var(--bg-bar);
 }
