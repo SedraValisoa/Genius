@@ -16,7 +16,6 @@
     --color-green-900: oklch(39.3% 0.095 152.535);
     --color-emerald-400: oklch(76.5% 0.177 163.223);
     --color-emerald-500: oklch(69.6% 0.17 162.48);
-    --color-emerald-900: oklch(37.8% 0.077 168.94);
     --color-stone-400: oklch(70.9% 0.01 56.259);
     --color-stone-500: oklch(55.3% 0.013 58.071);
     --color-white: #fff;
@@ -198,6 +197,9 @@
   }
 }
 @layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
   .absolute {
     position: absolute;
   }
@@ -206,6 +208,9 @@
   }
   .relative {
     position: relative;
+  }
+  .sticky {
+    position: sticky;
   }
   .top-0 {
     top: calc(var(--spacing) * 0);
@@ -312,8 +317,29 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .-mt-0 {
+    margin-top: calc(var(--spacing) * -0);
+  }
   .-mt-6 {
     margin-top: calc(var(--spacing) * -6);
+  }
+  .-mt-7 {
+    margin-top: calc(var(--spacing) * -7);
+  }
+  .-mt-10 {
+    margin-top: calc(var(--spacing) * -10);
+  }
+  .-mt-19 {
+    margin-top: calc(var(--spacing) * -19);
+  }
+  .-mt-20 {
+    margin-top: calc(var(--spacing) * -20);
+  }
+  .-mt-30 {
+    margin-top: calc(var(--spacing) * -30);
+  }
+  .-mt-40 {
+    margin-top: calc(var(--spacing) * -40);
   }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
@@ -321,14 +347,35 @@
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
+  }
   .mr-5 {
     margin-right: calc(var(--spacing) * 5);
+  }
+  .mb-100 {
+    margin-bottom: calc(var(--spacing) * 100);
+  }
+  .ml-1 {
+    margin-left: calc(var(--spacing) * 1);
+  }
+  .ml-2 {
+    margin-left: calc(var(--spacing) * 2);
   }
   .ml-4 {
     margin-left: calc(var(--spacing) * 4);
   }
   .ml-7 {
     margin-left: calc(var(--spacing) * 7);
+  }
+  .ml-10 {
+    margin-left: calc(var(--spacing) * 10);
+  }
+  .ml-18 {
+    margin-left: calc(var(--spacing) * 18);
+  }
+  .ml-20 {
+    margin-left: calc(var(--spacing) * 20);
   }
   .ml-40 {
     margin-left: calc(var(--spacing) * 40);
@@ -440,8 +487,14 @@
   .w-\[15px\] {
     width: 15px;
   }
+  .w-fit {
+    width: fit-content;
+  }
   .w-full {
     width: 100%;
+  }
+  .w-screen {
+    width: 100vw;
   }
   .flex-1 {
     flex: 1;
@@ -546,6 +599,19 @@
       margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
     }
+  }
+  .space-x-10 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 10) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .self-center {
+    align-self: center;
+  }
+  .self-start {
+    align-self: flex-start;
   }
   .rounded-3xl {
     border-radius: var(--radius-3xl);
@@ -658,6 +724,9 @@
     --tw-gradient-to: var(--color-green-500);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
+  .fill-\[\#EFEEDC\] {
+    fill: #EFEEDC;
+  }
   .fill-\[\#F4D738\] {
     fill: #F4D738;
   }
@@ -679,8 +748,8 @@
   .p-7 {
     padding: calc(var(--spacing) * 7);
   }
-  .px-4 {
-    padding-inline: calc(var(--spacing) * 4);
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
   }
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
@@ -700,6 +769,9 @@
   .pr-2\.5 {
     padding-right: calc(var(--spacing) * 2.5);
   }
+  .pb-2 {
+    padding-bottom: calc(var(--spacing) * 2);
+  }
   .pb-7 {
     padding-bottom: calc(var(--spacing) * 7);
   }
@@ -708,6 +780,9 @@
   }
   .pl-3\.5 {
     padding-left: calc(var(--spacing) * 3.5);
+  }
+  .text-center {
+    text-align: center;
   }
   .font-\[ZCOOL_KuaiLe\] {
     font-family: ZCOOL KuaiLe;
@@ -822,6 +897,13 @@
   }
   .text-shadow-lg {
     text-shadow: 0px 1px 2px var(--tw-text-shadow-color, rgb(0 0 0 / 0.1)), 0px 3px 2px var(--tw-text-shadow-color, rgb(0 0 0 / 0.1)), 0px 4px 8px var(--tw-text-shadow-color, rgb(0 0 0 / 0.1));
+  }
+  .group-hover\:fill-\[\#CFCEBA\] {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        fill: #CFCEBA;
+      }
+    }
   }
   .group-hover\:fill-\[\#f7e895\] {
     &:is(:where(.group):hover *) {
@@ -973,13 +1055,6 @@
       background-color: var(--color-primary);
     }
   }
-  .hover\:fill-\[\#f7e895\] {
-    &:hover {
-      @media (hover: hover) {
-        fill: #f7e895;
-      }
-    }
-  }
   .hover\:before\:w-22\.5 {
     &:hover {
       @media (hover: hover) {
@@ -1026,6 +1101,21 @@ body {
   width: 200px;
   &:hover {
     background-color: #e0e0e0;
+  }
+}
+input[type="radio"] {
+  display: none;
+}
+.setting:has(input#difficulty-normal[type="radio"]:checked) svg.difficulty-normal path.cursor-pointer, .setting:has(input#difficulty-extreme[type="radio"]:checked) svg.difficulty-extreme path.cursor-pointer, .setting:has(input#difficulty-master[type="radio"]:checked) svg.difficulty-master path.cursor-pointer, .setting:has(input#speed-normal[type="radio"]:checked) svg.speed-normal path.cursor-pointer, .setting:has(input#speed-extreme[type="radio"]:checked) svg.speed-extreme path.cursor-pointer, .setting:has(input#speed-master[type="radio"]:checked) svg.speed-master path.cursor-pointer, .setting:has(input#accurency-normal[type="radio"]:checked) svg.accurency-normal path.cursor-pointer, .setting:has(input#accurency-extreme[type="radio"]:checked) svg.accurency-extreme path.cursor-pointer, .setting:has(input#accurency-master[type="radio"]:checked) svg.accurency-master path.cursor-pointer, .setting:has(input#burst-normal[type="radio"]:checked) svg.burst-normal path.cursor-pointer, .setting:has(input#burst-extreme[type="radio"]:checked) svg.burst-extreme path.cursor-pointer, .setting:has(input#burst-master[type="radio"]:checked) svg.burst-master path.cursor-pointer {
+  fill: #F4D738;
+  &:hover {
+    fill: #f7e895;
+  }
+}
+.setting:has(input#difficulty-normal[type="radio"]:checked) .group :where(svg.difficulty-extrem path.cursor-pointer, svg.difficulty-master path.cursor-pointer), .setting:has(input#difficulty-extreme[type="radio"]:checked) .group :where(svg.difficulty-normal path.cursor-pointer, svg.difficulty-master path.cursor-pointer), .setting:has(input#difficulty-master[type="radio"]:checked) .group :where(svg.difficulty-normal path.cursor-pointer, svg.difficulty-extreme path.cursor-pointer), .setting:has(input#speed-normal[type="radio"]:checked) .group :where(svg.speed-extrem path.cursor-pointer, svg.speed-master path.cursor-pointer), .setting:has(input#speed-extreme[type="radio"]:checked) .group :where(svg.speed-normal path.cursor-pointer, svg.speed-master path.cursor-pointer), .setting:has(input#speed-master[type="radio"]:checked) .group :where(svg.speed-normal path.cursor-pointer, svg.speed-extreme path.cursor-pointer), .setting:has(input#accurency-normal[type="radio"]:checked) .group :where(svg.accurency-extrem path.cursor-pointer, svg.accurency-master path.cursor-pointer), .setting:has(input#accurency-extreme[type="radio"]:checked) .group :where(svg.accurency-normal path.cursor-pointer, svg.accurency-master path.cursor-pointer), .setting:has(input#accurency-master[type="radio"]:checked) .group :where(svg.accurency-normal path.cursor-pointer, svg.accurency-extreme path.cursor-pointer), .setting:has(input#burst-normal[type="radio"]:checked) .group :where(svg.burst-extrem path.cursor-pointer, svg.burst-master path.cursor-pointer), .setting:has(input#burst-extreme[type="radio"]:checked) .group :where(svg.burst-normal path.cursor-pointer, svg.burst-master path.cursor-pointer), .setting:has(input#burst-master[type="radio"]:checked) .group :where(svg.burst-normal path.cursor-pointer, svg.burst-extreme path.cursor-pointer) {
+  fill: #EFEEDC;
+  &:hover {
+    fill: #CFCEBA;
   }
 }
 @property --tw-translate-x {

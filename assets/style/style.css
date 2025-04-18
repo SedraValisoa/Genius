@@ -50,3 +50,46 @@ body {
         background-color: #e0e0e0;
     }
 }
+
+input[type="radio"] {
+    display: none;
+}
+
+/* fill-[#F4D738] group-hover:fill-[#f7e895]  jaune*/
+/* fill-[#EFEEDC] group-hover:fill-[#CFCEBA] grid */
+
+.setting:has(input#difficulty-normal[type="radio"]:checked) svg.difficulty-normal path.cursor-pointer,
+.setting:has(input#difficulty-extreme[type="radio"]:checked) svg.difficulty-extreme path.cursor-pointer,
+.setting:has(input#difficulty-master[type="radio"]:checked) svg.difficulty-master path.cursor-pointer,
+.setting:has(input#speed-normal[type="radio"]:checked) svg.speed-normal path.cursor-pointer,
+.setting:has(input#speed-extreme[type="radio"]:checked) svg.speed-extreme path.cursor-pointer,
+.setting:has(input#speed-master[type="radio"]:checked) svg.speed-master path.cursor-pointer,
+.setting:has(input#accurency-normal[type="radio"]:checked) svg.accurency-normal path.cursor-pointer,
+.setting:has(input#accurency-extreme[type="radio"]:checked) svg.accurency-extreme path.cursor-pointer,
+.setting:has(input#accurency-master[type="radio"]:checked) svg.accurency-master path.cursor-pointer,
+.setting:has(input#burst-normal[type="radio"]:checked) svg.burst-normal path.cursor-pointer,
+.setting:has(input#burst-extreme[type="radio"]:checked) svg.burst-extreme path.cursor-pointer,
+.setting:has(input#burst-master[type="radio"]:checked) svg.burst-master path.cursor-pointer {
+    fill: #F4D738;
+    &:hover {
+        fill: #f7e895;
+    }
+}
+
+.setting:has(input#difficulty-normal[type="radio"]:checked) .group :where(svg.difficulty-extrem path.cursor-pointer, svg.difficulty-master path.cursor-pointer),
+.setting:has(input#difficulty-extreme[type="radio"]:checked) .group :where(svg.difficulty-normal path.cursor-pointer, svg.difficulty-master path.cursor-pointer),
+.setting:has(input#difficulty-master[type="radio"]:checked) .group :where(svg.difficulty-normal path.cursor-pointer, svg.difficulty-extreme path.cursor-pointer),
+.setting:has(input#speed-normal[type="radio"]:checked) .group :where(svg.speed-extrem path.cursor-pointer, svg.speed-master path.cursor-pointer),
+.setting:has(input#speed-extreme[type="radio"]:checked) .group :where(svg.speed-normal path.cursor-pointer, svg.speed-master path.cursor-pointer),
+.setting:has(input#speed-master[type="radio"]:checked) .group :where(svg.speed-normal path.cursor-pointer, svg.speed-extreme path.cursor-pointer),
+.setting:has(input#accurency-normal[type="radio"]:checked) .group :where(svg.accurency-extrem path.cursor-pointer, svg.accurency-master path.cursor-pointer),
+.setting:has(input#accurency-extreme[type="radio"]:checked) .group :where(svg.accurency-normal path.cursor-pointer, svg.accurency-master path.cursor-pointer),
+.setting:has(input#accurency-master[type="radio"]:checked) .group :where(svg.accurency-normal path.cursor-pointer, svg.accurency-extreme path.cursor-pointer),
+.setting:has(input#burst-normal[type="radio"]:checked) .group :where(svg.burst-extrem path.cursor-pointer, svg.burst-master path.cursor-pointer),
+.setting:has(input#burst-extreme[type="radio"]:checked) .group :where(svg.burst-normal path.cursor-pointer, svg.burst-master path.cursor-pointer),
+.setting:has(input#burst-master[type="radio"]:checked) .group :where(svg.burst-normal path.cursor-pointer, svg.burst-extreme path.cursor-pointer) {
+    fill: #EFEEDC;
+    &:hover {
+        fill: #CFCEBA;
+    }
+}
