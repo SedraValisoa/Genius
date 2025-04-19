@@ -4,8 +4,7 @@
   "description": "A barebones typing website for you to complete. ",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "devUI": "npx @tailwindcss/cli -i ./assets/style/style.css -o ./assets/style/output.css --watch"
+    "start": "npx @tailwindcss/cli -i ./assets/style/style.css -o ./assets/style/output.css --watch"
   },
   "keywords": [
     "typing",
