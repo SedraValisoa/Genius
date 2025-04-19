@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genius</title>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="stylesheet" href="../assets/style/output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap"
+      rel="stylesheet"
+    />
+    <base href="assets/image/" />
+  </head>
+
+  <body class="flex flex-col min-h-screen font-[base] w-full">
+    <header class="h-20">
+      <nav class="flex justify-between items-center">
+        <img
+          src="logo-home.png"
+          alt="Logo"
+          class="w-60 ml-4 select-none cursor-pointer"
+        />
+        <div class="flex items-center gap-4 mr-5">
+          <button
+            class="bg-emerald-500 p-2 size-12 border-2 border-green-900 cursor-pointer cartoon rounded-full"
+          >
+            <svg
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_d_237_363)">
+                <path
+                  d="M12.5 16.6667C12.5 12.469 12.5 10.3702 13.2681 8.74621C14.0594 7.07307 15.4064 5.72608 17.0796 4.93474C18.7035 4.16666 20.8024 4.16666 25 4.16666C29.1976 4.16666 31.2965 4.16666 32.9204 4.93474C34.5936 5.72608 35.9406 7.07307 36.7319 8.74621C37.5 10.3702 37.5 12.469 37.5 16.6667V20.5682C37.5 22.7705 37.5 23.8716 37.7903 24.9196C38.0806 25.9676 38.6471 26.9118 39.7801 28.8002L41.9326 32.3877C42.7384 33.7306 43.1412 34.4021 42.854 34.9094C42.5668 35.4167 41.7837 35.4167 40.2176 35.4167H9.78247C8.21637 35.4167 7.43333 35.4167 7.1461 34.9094C6.85887 34.4021 7.26173 33.7306 8.06747 32.3877L10.22 28.8001C11.353 26.9118 11.9195 25.9676 12.2097 24.9196C12.5 23.8716 12.5 22.7705 12.5 20.5683V16.6667Z"
+                  fill="#EFEEDC"
+                />
+              </g>
+              <path
+                d="M30.0584 37.5C30.1412 37.5 30.2087 37.5672 30.205 37.65C30.1577 38.7006 29.6154 39.7003 28.6829 40.4463C27.7061 41.2277 26.3814 41.6667 25 41.6667C23.6187 41.6667 22.2939 41.2277 21.3172 40.4463C20.3847 39.7003 19.8423 38.7006 19.7951 37.65C19.7914 37.5672 19.8589 37.5 19.9417 37.5L25 37.5L30.0584 37.5Z"
+                fill="#F4D738"
+              />
+              <defs>
+                <filter
+                  id="filter0_d_237_363"
+                  x="3.05371"
+                  y="4.16666"
+                  width="43.8927"
+                  height="39.25"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="4" />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_237_363"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_237_363"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+          </button>
+          <a
+            href="#"
+            class="flex relative items-center scale-[0.58] select-none"
+          >
+            <div class="absolute top-3 left-5 flex items-center justify-center">
+              <svg
+                class="size-14 z-20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="8" r="4" fill="#222222" />
+                <path
+                  d="M5.33788 17.3206C5.99897 14.5269 8.77173 13 11.6426 13H12.3574C15.2283 13 18.001 14.5269 18.6621 17.3206C18.79 17.8611 18.8917 18.4268 18.9489 19.0016C19.0036 19.5512 18.5523 20 18 20H6C5.44772 20 4.99642 19.5512 5.0511 19.0016C5.1083 18.4268 5.20997 17.8611 5.33788 17.3206Z"
+                  fill="#7E869E"
+                  fill-opacity="0.25"
+                />
+              </svg>
+
+              <p class="font-bold text-2xl text-stone-500 z-40">User</p>
+            </div>
+            <svg
+              width="166"
+              height="100"
+              class="cartoon-user"
+              viewBox="0 0 166 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_di_338_25)">
+                <path
+                  d="M13.0548 16.2764C14.5302 8.49046 15.2679 4.59752 18.0431 2.29876C20.8184 0 24.7806 0 32.7051 0H136.412C144.063 0 147.888 0 150.624 2.18212C153.36 4.36424 154.21 8.09359 155.912 15.5523L162.504 44.4522C164.621 53.7361 165.68 58.378 163.44 61.8998C161.199 65.4216 156.546 66.4298 147.24 68.4463L26.5067 94.6065C13.1719 97.4959 6.50444 98.9406 2.65753 95.1928C-1.18938 91.445 0.0807869 84.7422 2.62111 71.3365L13.0548 16.2764Z"
+                />
+                <path
+                  d="M32.7051 1H136.412C140.262 1 143.06 1.0017 145.241 1.26553C147.395 1.52608 148.831 2.03151 150 2.96391C151.169 3.89631 151.982 5.18458 152.715 7.22637C153.457 9.29373 154.081 12.0213 154.937 15.7747L161.529 44.6746C162.594 49.3442 163.368 52.7484 163.61 55.4267C163.849 58.0761 163.55 59.8631 162.596 61.363C161.642 62.863 160.15 63.8912 157.649 64.7974C155.12 65.7134 151.709 66.4547 147.028 67.469L26.295 93.6292C19.5953 95.0809 14.681 96.143 10.9577 96.3908C7.25383 96.6373 4.97806 96.0574 3.35535 94.4765C1.73264 92.8956 1.09355 90.6358 1.2433 86.9267C1.39382 83.1983 2.32732 78.258 3.60363 71.5227L14.0373 16.4625C14.7797 12.5447 15.3212 9.69649 16.0138 7.53502C16.6979 5.39989 17.4957 4.05071 18.681 3.06888C19.8664 2.08706 21.3405 1.55446 23.5657 1.27981C25.8183 1.00178 28.7175 1 32.7051 1Z"
+                  class="stroke-stone-400"
+                  stroke-width="3"
+                />
+              </g>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="grid grid-cols-[40%_60%] w-full mt-4 max-w-285 mx-auto">
+        <div class="flex flex-col gap-4">
+          <div class="relative ml-7">
+            <img src="bg-user.svg" alt="User" class="w-64 select-none" />
+            <div class="flex items-center absolute top-4 left-6 gap-3">
+              <button
+                class="absolute -top-10 -right-17 cursor-pointer select-none"
+              >
+                <img src="btn-link.svg" alt="link user" class="w-8" />
+              </button>
+              <img src="icon-user.svg" alt="User" class="w-20 select-none" />
+              <div class="space-y-1.5">
+                <img
+                  src="pencil.svg"
+                  alt="Edit"
+                  class="absolute w-5 -right-6 -top-3 cursor-pointer"
+                />
+                <p class="text-secondary font-[archivo] font-semibold text-xl">
+                  Nickname
+                </p>
+                <img src="noobies.svg" alt="Noobies" class="w-20 select-none" />
+                <p class="text-[#777777] text-xs pt-2">ID : 5157878029</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="relative">
+              <img
+                src="rect-wpm.svg"
+                alt="bg-wpm"
+                class="w-33 absolute select-none"
+              />
+              <div class="absolute top-4 left-1 space-y-1">
+                <div class="relative">
+                  <p
+                    class="text-2xl font[archivo] text-white absolute top-2.5 text-shadow-xs left-3"
+                  >
+                    85
+                  </p>
+                  <p class="absolute top-0 text-xs text-[#777777] left-8">
+                    wpm
+                  </p>
+                  <img
+                    src="bg-wpm-user-yellow.svg"
+                    alt="bg-wpm-user-yellow"
+                    class="w-30 select-none"
+                  />
+                  <img
+                    src="grid-wpm.svg"
+                    alt="gird"
+                    class="w-10 absolute top-1.5 right-3.5 select-none"
+                  />
+                  <p
+                    class="text-xs text-[#777777] font-[archivo] absolute top-1 right-6"
+                  >
+                    30s
+                  </p>
+                  <p
+                    class="text-xs text-[#777777] font-[archivo] absolute bottom-3 right-2"
+                  >
+                    English
+                  </p>
+                </div>
+                <div class="relative">
+                  <p
+                    class="text-2xl font[archivo] text-[#777777] absolute top-2.5 text-shadow-xs left-3"
+                  >
+                    26
+                  </p>
+                  <p class="absolute top-0 text-xs text-[#777777] left-8">
+                    wpm
+                  </p>
+                  <img
+                    src="bg-wpm-user-white.svg"
+                    alt="bg-wpm-user-yellow"
+                    class="w-30 select-none"
+                  />
+                  <img
+                    src="grid-wpm.svg"
+                    alt="gird"
+                    class="w-10 absolute top-1.5 right-3.5 select-none"
+                  />
+                  <p
+                    class="text-xs text-[#777777] font-[archivo] absolute top-1 right-6"
+                  >
+                    60s
+                  </p>
+                  <p
+                    class="text-xs text-[#777777] font-[archivo] absolute bottom-3 right-2"
+                  >
+                    French
+                  </p>
+                </div>
+                <div class="relative">
+                  <p
+                    class="text-2xl font[archivo] text-[#777777] absolute top-2.5 text-shadow-xs left-3"
+                  >
+                    50
+                  </p>
+                  <p class="absolute top-0 text-xs text-[#777777] left-8">
+                    wpm
+                  </p>
+                  <img
+                    src="bg-wpm-user-white.svg"
+                    alt="bg-wpm-user-yellow"
+                    class="w-30 select-none"
+                  />
+                  <img
+                    src="grid-wpm.svg"
+                    alt="gird"
+                    class="w-10 absolute top-1.5 right-3.5 select-none"
+                  />
+                  <p
+                    class="text-xs text-[#777777] font-[archivo] absolute top-1 right-6"
+                  >
+                    30s
+                  </p>
+                  <p
+                    class="text-xs text-[#777777] font-[archivo] absolute bottom-3 right-2"
+                  >
+                    English
+                  </p>
+                </div>
+              </div>
+              <img
+                src="stat.svg"
+                alt="Stat"
+                class="absolute w-38 left-40 select-none"
+              />
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </main>
+  </body>
+</html>

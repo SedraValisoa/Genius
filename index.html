@@ -6,7 +6,7 @@
     <link rel="icon" href="./assets/image/Logo.png" type="image/png" />
     <title>Genius</title>
     <link rel="stylesheet" href="assets/style/output.css" />
-    <base href="assets/image/" />
+    <!-- <base href="assets/image/" /> -->
   </head>
 
   <body class="flex overflow-hidden flex-col min-h-screen font-[base] w-full">
@@ -20,7 +20,8 @@
         />
         <div class="flex items-center gap-4 mr-5">
           <button
-            class="bg-accent p-2 size-12 border-2 border-emerald-900 cursor-pointer cartoon anime-notification -translate-y-48 rounded-full"
+            class="bg-green p-2 size-12 border-2 border-emerald-900 cursor-pointer cartoon anime-notification -translate-y-48 rounded-full"
+            data-hidden
           >
             <svg
               viewBox="0 0 50 50"
@@ -79,6 +80,7 @@
           <a
             href="#"
             class="flex relative items-center scale-[0.58] select-none anime-user translate-x-40"
+            data-hidden
           >
             <div class="absolute top-3 left-5 flex items-center justify-center">
               <svg
@@ -127,7 +129,11 @@
           class="bg-gradient-to-l from-transparent from-75% to-orange-50 flex flex-col w-1/4 h-screen fixed top-0 left-0 px-8 justify-center"
         >
           <ul>
-            <li class="relative -translate-x-full anime">
+            <li
+              class="relative -translate-x-full anime"
+              data-status="coming"
+              data-hidden
+            >
               <svg
                 class="size-12 absolute z-10 translate-x-3 translate-y-2 cursor-pointer"
                 viewBox="0 0 24 24"
@@ -221,7 +227,7 @@
                 </svg>
               </div>
             </li>
-            <li class="relative -translate-x-full anime">
+            <li class="relative -translate-x-full anime" data-hidden>
               <svg
                 class="size-12 absolute z-10 translate-x-5 translate-y-3 cursor-pointer"
                 viewBox="0 0 50 35"
@@ -374,7 +380,11 @@
                 </svg>
               </div>
             </li>
-            <li class="relative -translate-x-full anime">
+            <li
+              class="relative -translate-x-full anime"
+              data-status="coming"
+              data-hidden
+            >
               <svg
                 viewBox="0 0 24 24"
                 class="size-10 absolute z-10 translate-x-4 translate-y-3 cursor-pointer"
@@ -473,6 +483,7 @@
           <div class="flex items-center justify-evenly -mb-14">
             <button
               class="relative btn py-2 pr-2.5 pl-3.5 select-none btn-with"
+              data-hidden
             >
               <p class="flex items-center gap-1.5">
                 <strong
@@ -510,6 +521,7 @@
                 class="absolute top-0 right-24 origin-top-right scale-0 transition-all opacity-0 flex flex-col bg-secondary cartoon-menu border-2 border-sky-950 rounded-2xl p-2.5 gap-1.5"
               >
                 <span
+                  data-status="in-coming"
                   class="flex items-center gap-1.5 text-md text-teal-50 font-semibold hover:bg-white/10 rounded-md p-1.5 cursor-pointer"
                   ><strong
                     ><svg
@@ -530,6 +542,7 @@
                   punctuation</span
                 >
                 <span
+                  data-status="in-coming"
                   class="flex items-center gap-1.5 text-md text-teal-50 font-semibold hover:bg-white/10 rounded-md p-1.5 cursor-pointer"
                   ><strong
                     ><svg
@@ -575,7 +588,11 @@
               </div>
             </button>
 
-            <button class="btn py-2 pr-2.5 pl-3.5 btn-type select-none">
+            <button
+              class="btn py-2 pr-2.5 pl-3.5 btn-type select-none"
+              data-status="in-coming"
+              data-hidden
+            >
               <p class="-translate-y-0.5">Type</p>
               <svg
                 width="24"
@@ -714,7 +731,8 @@
           <!-- Langage / Option-timer -->
           <div class="flex-1 flex justify-center gap-80 -translate-y-4 -mt-8">
             <button
-              class="btn btn-language p-1 bg-white/20! btn-remove text-secondary! select-none"
+              class="btn btn-language p-1 bg-white/20! text-secondary! select-none"
+              data-hidden
             >
               <svg
                 width="24"
@@ -754,6 +772,7 @@
             </button>
             <button
               class="btn btn-mode p-1 bg-white/20! backdrop-blur-2xl text-secondary! btn-remove select-none"
+              data-hidden
             >
               <svg
                 width="24"
@@ -810,17 +829,17 @@
               class="absolute bottom-0 left-0 w-17.5 h-15 border-b-[5px] border-l-[5px] border-stone-400 rounded-bl-4xl"
             ></span> -->
             <div
-              class="typed text-8xl line-clamp-2 bg-primary rounded-xl shadow-lg"
+              class="typed text-8xl pb-10 line-clamp-2 bg-primary rounded-xl shadow-lg"
             >
               <type-game></type-game>
             </div>
           </div>
           <!-- Barre de difficulté -->
-          <div class="absolute top-1/4 right-[5%] level">
+          <div class="absolute top-1/4 right-[5%] level" data-hidden>
             <div class="flex items-center space-x-4">
               <!-- Barre de difficulté avec dégradé -->
               <div
-                class="h-85 w-[15px] rounded-full bg-gradient-to-t to-93% from-5% to-transparent from-accent border-2 border-accent shadow-lg transition-colors"
+                class="h-85 w-[15px] rounded-full bg-gradient-to-t to-93% from-5% to-transparent from-green border-2 border-green shadow-lg transition-colors"
               ></div>
 
               <!-- Boutons à droite -->
@@ -848,7 +867,7 @@
 
       <div
         id="optionPop"
-        class="absolute z-999 flex justify-center items-center inset-0 bg-black/30 backdrop-blur-md"
+        class="absolute z-999 hidden justify-center items-center inset-0 bg-black/30 backdrop-blur-md"
       >
         <div class="pt-8 bg-amber-50 w-1/2 rounded-2xl cartoon-user options">
           <h3
@@ -880,7 +899,7 @@
       </div>
       <div
         id="modePop"
-        class="absolute z-999 flex justify-center items-center inset-0 bg-black/30 backdrop-blur-md"
+        class="absolute hidden z-999 justify-center items-center inset-0 bg-black/30 backdrop-blur-md"
       >
         <div class="pt-8 bg-amber-50 w-1/2 rounded-2xl cartoon-user options">
           <h3
@@ -910,25 +929,35 @@
           ></div>
         </div>
       </div>
-
       <template id="listOption">
         <input type="radio" class="hidden" name="option" id="option1" />
         <label
           for="option1"
-          class="flex items-center justify-center gap-4 text-lg border-2 rounded-2xl border-accent bg-emerald-200 p-2"
+          class="flex items-center justify-center gap-4 text-lg border-2 rounded-2xl border-green bg-emerald-200 p-2"
         ></label
       ></template>
+      <div
+        id="popUp"
+        class="absolute transition-colors scale-0 origin-bottom-right border-2 bottom-4 right-4 bg-amber-50 px-8 py-6 text-amber-700 font-bold rounded-2xl"
+      >
+        <div class="flex items-center justify-center gap-4">
+          <h3>message</h3>
+          <span></span>
+        </div>
+      </div>
       <template id="modeOption">
-        <input type="radio" class="hidden" name="mode" id="mode" />
+        <input type="checkbox" class="hidden" name="mode" id="mode" />
         <label
           for="mode"
-          class="flex items-center justify-center gap-4 text-lg border-2 rounded-2xl border-accent bg-emerald-200 p-2"
-        ></label
-      ></template>
+          data-status="in-coming"
+          class="flex items-center justify-center gap-4 text-lg border-2 rounded-2xl border-green bg-emerald-200 p-2"
+        ></label>
+      </template>
     </main>
     <footer class="grid grid-cols-3 w-full h-fit pb-18">
       <div
         class="flex text-sm! text-center font-[Zcool] text-secondary items-center anime-footer-left"
+        data-hidden
       >
         <p
           class="flex items-center gap-2 bg-primary px-4 py-1 cartoon-user border-2 border-stone-400 rounded-xl"
@@ -974,10 +1003,10 @@
         </svg>
       </button>
       <button
-        class="mx-auto cursor-pointer cartoon size-12 border-2 translate-x-80 anime-footer-right border-green-900 rounded-full text-white bg-accent grid place-items-center"
+        class="mx-auto cursor-pointer cartoon size-12 border-2 translate-x-80 anime-footer-right border-green-900 rounded-full text-white bg-green grid place-items-center"
+        data-hidden
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
           viewBox="0 0 24 24"

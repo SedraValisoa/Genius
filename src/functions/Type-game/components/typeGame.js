@@ -7,14 +7,21 @@ import {
 
 import { getGameTime } from "../index.js";
 import { createOptions } from "../createOption.js";
-import { Language as L } from "./Language.js";
 const keyType = [];
 const keyExpected = [];
 export const scoreWord = [];
 const Language = localStorage.getItem("language") || "english";
-const words = await fetch(`assets/languages/${Language}.json`).then((res) =>
-  res.json()
-);
+
+async function getWords(Language) {
+  return localStorage.getItem("qoutes")
+    ? await fetch(`assets/quotes/${Language}.json`).then((res) => res.json())
+    : await fetch(`assets/languages/${Language}.json`).then((res) =>
+        res.json()
+      );
+}
+
+const words = await getWords(Language);
+
 let missed = 0;
 let extra = 0;
 /**
@@ -38,13 +45,14 @@ export default class typeGame extends HTMLElement {
   constructor() {
     super();
     this.timer = 0;
-    this.wordsCount = words.words.length;
+    this.wordsCount = words?.quotes?.length ?? words?.words?.length;
     this.gameStart = false;
     this.document = document;
     this.setTimer = null;
     this.reset = this.document.querySelector(".reset");
     this.onGame = this.onGame.bind(this);
     this.gameTime = gameTime;
+    this.isCapsLockActive = 0;
     this.game = document.createElement("div");
     this.cursor = document.createElement("div");
     this.words = document.createElement("div");
@@ -85,11 +93,8 @@ export default class typeGame extends HTMLElement {
     minus.setAttribute("disabled", "true");
     plus.setAttribute("disabled", "true");
 
-    [...this.document.querySelectorAll(".btn-remove")].map(
-      (el) => (el.style.display = "none")
-    );
-    [...this.document.querySelectorAll(".level")].map(
-      (el) => (el.style.display = "none")
+    [...this.document.querySelectorAll("[data-hidden]")].map(
+      (el) => (el.style.opacity = "0")
     );
   };
   mouseLeave = () => {
@@ -100,12 +105,11 @@ export default class typeGame extends HTMLElement {
     this.reset.removeAttribute("disabled");
     removeClass(this.focus, "hidden");
     this.cursor.style.display = "none";
-    [...this.document.querySelectorAll(".btn-remove")].map(
-      (el) => (el.style.display = "flex")
-    );
-    [...this.document.querySelectorAll(".level")].map(
-      (el) => (el.style.display = "flex")
-    );
+    [...this.document.querySelectorAll("[data-hidden]")].map((el) => {
+      el.style.display = "flex";
+      el.style.opacity = "1";
+      return el;
+    });
     this.document
       .querySelector("#timeBar")
       .style.setProperty("--widthBar", "635px");
@@ -186,12 +190,29 @@ export default class typeGame extends HTMLElement {
     window.removeEventListener("keydown", this.onGame);
     this.cursor.style.display = "none";
     window.removeEventListener("click", this.focusClick);
-    window.location.href = "pages/score.html";
+    const params = new URLSearchParams();
+    const [WPM, ACCURACY] = getCurrentStats();
+    const { correct, incorrect, corrections } = calculateKeyStats(
+      keyType,
+      keyExpected
+    );
+
+    params.append("wpm", WPM);
+    params.append("accuracy", ACCURACY);
+    params.append("correct", correct);
+    params.append("incorrect", incorrect);
+    params.append("missed", missed);
+    params.append("extra", extra);
+    params.append("corrections", corrections);
+    console.log(params.toString());
+
+    window.location.href = `pages/score.html?${params.toString()}`;
     return;
   }
 
   pauseTimer = () => this.setTimer?.pause();
   resumeTimer = () => this.setTimer?.resume();
+
   onGame(ev) {
     const key = ev.key;
     const currentWord = this.game.querySelector(".word.current");
@@ -200,17 +221,12 @@ export default class typeGame extends HTMLElement {
     const isLetter = key.length === 1 && key !== " ";
     const isSpace = key === " ";
     const isBackspace = key === "Backspace";
+    const isCapsLock = key === "CapsLock";
     const isFirstLetter = currentLetter === currentWord?.firstChild;
     const extraWord = currentWord?.querySelector(".extra");
     let getLetterErrorLength = currentWord?.querySelectorAll(".extra").length;
     this.startTime = Date.now();
     this.cursor.style.display = "flex";
-
-    const [WPM, ACCURACY] = getCurrentStats();
-    const { correct, incorrect, corrections } = calculateKeyStats(
-      keyType,
-      keyExpected
-    );
 
     if (
       this.document.querySelector("#game.over") ||
@@ -222,18 +238,27 @@ export default class typeGame extends HTMLElement {
 
     keyType.push(key);
     keyExpected.push(expected);
+    if (isCapsLock) {
+      const popUp = this.document.querySelector("#popUp").cloneNode(true);
+      addClass(popUp, "scale-100");
+      removeClass(popUp, "scale-0");
+      popUp.querySelector("span").innerText =
+        this.isCapsLockActive % 2 === 0
+          ? `Caps Lock is on`
+          : `Caps Lock is off`;
+      console.log(this.isCapsLockActive);
 
-    if (isSpace) {
-      scoreWord.push({
-        WPM,
-        ACCURACY,
-        correct,
-        incorrect,
-        extra,
-        corrections,
-        missed,
-        second: this.secondLeft,
-      });
+      popUp.querySelector("h3").innerHTML =
+        this.isCapsLockActive % 2 === 0
+          ? `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`
+          : `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-keyhole-open-icon lucide-lock-keyhole-open"><circle cx="12" cy="16" r="1"/><rect width="18" height="12" x="3" y="10" rx="2"/><path d="M7 10V7a5 5 0 0 1 9.33-2.5"/></svg>`;
+
+      document.body.appendChild(popUp);
+      this.isCapsLockActive++;
+
+      setTimeout(() => {
+        return popUp.remove();
+      }, 2000);
     }
 
     if (isLetter) {
@@ -316,7 +341,6 @@ export default class typeGame extends HTMLElement {
       }
       addClass(currentWord.nextSibling.firstChild, "current");
     }
-    console.log(this.gameTime);
 
     if (isBackspace) {
       if (this.words.firstChild.firstChild.className.includes("current")) {
@@ -394,7 +418,7 @@ function getCurrentStats() {
   };
 
   const { correct } = calculateKeyStats(keyType, keyExpected);
-  const WPM = ((correct / 5 / getGameTime()) * 60 * 1000).toFixed(2);
+  const WPM = (correct / 5 / getGameTime()) * 60000;
   const ACCURACY = getAccurecy();
   return [WPM, ACCURACY];
 }

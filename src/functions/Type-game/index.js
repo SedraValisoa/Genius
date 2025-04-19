@@ -1,4 +1,5 @@
 import { animate } from "../../../node_modules/animejs/lib/anime.esm.js";
+import { ComingSoonBlocker } from "./components/CommingSoon.js";
 import { Language } from "./components/Language.js";
 import typeGame from "./components/typeGame.js";
 import { createOptions } from "./createOption.js";
@@ -92,11 +93,6 @@ async function popOption() {
     optionConteiner.style.display = "none";
   });
   document.body.appendChild(optionConteiner);
-
-  // .addEventListener("change", (e) => {
-  //   console.log(e.target.value);
-  //   document.querySelector(".btn-language").textContent = e.target.value;
-  // });
 }
 let isFullLoad = false;
 
@@ -162,8 +158,12 @@ function modeOption() {
       modeOption.innerHTML = `${list.icon} ${list.mode}`;
       modeOption.setAttribute("for", k);
       modeInput.id = k;
+      if (list["mode"] == "time") {
+        modeInput.setAttribute("checked", true);
+        modeOption.setAttribute("data-status", "ckecked");
+      }
+
       modeInput.setAttribute("value", list.mode);
-      modeInput.setAttribute("checked", list.isSelect);
       modeOp.querySelector(".grid").appendChild(modeInput);
       modeOp.querySelector(".grid").appendChild(modeOption);
     }
@@ -184,4 +184,8 @@ document
   ?.addEventListener("click", () => modeOption());
 document.querySelector("button.btn-with").addEventListener("click", (e) => {
   console.log(e.target.textContent);
+});
+
+document.querySelectorAll("[data-status='coming']").forEach((el) => {
+  new ComingSoonBlocker(el);
 });
