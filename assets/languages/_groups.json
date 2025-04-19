@@ -92,30 +92,6 @@
   },
 
   {
-    "name": "python"
-  },
-  {
     "name": "javascript"
-  },
-  {
-    "name": "c"
-  },
-  {
-    "name": "csharp"
-  },
-  {
-    "name": "c++"
-  },
-  {
-    "name": "dart"
-  },
-  {
-    "name": "brainfck"
-  },
-  {
-    "name": "fsharp"
-  },
-  {
-    "name": "javascript_react"
   }
 ]
