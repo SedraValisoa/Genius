@@ -1,0 +1,121 @@
+[
+  {
+    "name": "english",
+    "languages": [
+      "english",
+      "english_1k",
+      "english_5k",
+      "english_10k",
+      "english_25k",
+      "english_450k",
+      "english_commonly_misspelled",
+      "english_contractions",
+      "english_doubleletter",
+      "english_shakespearean",
+      "english_old",
+      "english_medical"
+    ]
+  },
+  {
+    "name": "french",
+    "languages": [
+      "french",
+      "french_1k",
+      "french_2k",
+      "french_10k",
+      "french_600k"
+    ]
+  },
+
+  {
+    "name": "korean",
+    "languages": ["korean", "korean_1k", "korean_5k"]
+  },
+  {
+    "name": "git",
+    "languages": ["git"]
+  },
+  {
+    "name": "german",
+    "languages": [
+      "german",
+      "german_1k",
+      "german_5k",
+      "german_10k",
+      "german_25k",
+      "german_50k"
+    ]
+  },
+
+  {
+    "name": "chinese",
+    "languages": ["chinese"]
+  },
+
+  {
+    "name": "malagasy",
+    "languages": ["malagasy", "malagasy_1k"]
+  },
+
+  {
+    "name": "romanian",
+    "languages": [
+      "romanian",
+      "romanian_1k",
+      "romanian_5k",
+      "romanian_10k",
+      "romanian_25k",
+      "romanian_50k",
+      "romanian_100k",
+      "romanian_200k"
+    ]
+  },
+
+  {
+    "name": "armenian",
+    "languages": [
+      "armenian",
+      "armenian_1k",
+      "armenian_western",
+      "armenian_western_1k"
+    ]
+  },
+
+  {
+    "name": "japanese",
+    "languages": ["japanese_hiragana", "japanese_katakana"]
+  },
+
+  {
+    "name": "lorem_ipsum",
+    "languages": ["lorem_ipsum"]
+  },
+
+  {
+    "name": "python"
+  },
+  {
+    "name": "javascript"
+  },
+  {
+    "name": "c"
+  },
+  {
+    "name": "csharp"
+  },
+  {
+    "name": "c++"
+  },
+  {
+    "name": "dart"
+  },
+  {
+    "name": "brainfck"
+  },
+  {
+    "name": "fsharp"
+  },
+  {
+    "name": "javascript_react"
+  }
+]

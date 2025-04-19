@@ -8,68 +8,264 @@
     src: url(../fonts/Roboto-Regular.woff2);
 }
 
-<<<<<<< HEAD
-=======
-@font-face {
+<<<<<<< HEAD=======@font-face {
     font-family: 'archivo';
     src: url(../fonts/Archivo-VariableFont_wdth\,wght.ttf);
 }
 
-<<<<<<< HEAD
->>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
-=======
-@font-face {
+<<<<<<< HEAD>>>>>>>2bce97de28658451ee823f3c214c8fbe4adbe5f2=======@font-face {
     font-family: 'lexen';
     src: url(../fonts/LexendDeca-Regular.woff2);
 }
 
->>>>>>> bcec49dbea483be36c89df2c0324ee03131bffed
-body {
+>>>>>>>bcec49dbea483be36c89df2c0324ee03131bffed body {
     background: url("./../image/Background.png") center/cover no-repeat;
 }
 
 .cartoon {
-<<<<<<< HEAD
-    filter: drop-shadow(2px 4px 0px var(--color-green-900));
-=======
-    filter: drop-shadow(0 0 0);
->>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
-    transition: all 0.15s ease;
+    <<<<<<< HEAD filter: drop-shadow(2px 4px 0px var(--color-green-900));
+    =======filter: drop-shadow(0 0 0);
+    >>>>>>>2bce97de28658451ee823f3c214c8fbe4adbe5f2 transition: all 0.15s ease;
 }
 
 .cartoon-user {
-<<<<<<< HEAD
-    filter: drop-shadow(2px 4px 0px var(--color-orange-950));
-=======
-    filter: drop-shadow(0 0 0);
->>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
-    transition: all 0.15s ease;
+    <<<<<<< HEAD filter: drop-shadow(2px 4px 0px var(--color-orange-950));
+    =======filter: drop-shadow(0 0 0);
+    >>>>>>>2bce97de28658451ee823f3c214c8fbe4adbe5f2 transition: all 0.15s ease;
 }
 
 
 .cartoon:hover {
-<<<<<<< HEAD
-    background: var(--color-emerald-300);
+    <<<<<<< HEAD background: var(--color-emerald-300);
     filter: drop-shadow(0 0 0);
-=======
-    filter: drop-shadow(2px 4px 0px var(--color-green-900));
+    =======filter: drop-shadow(2px 4px 0px var(--color-green-900));
     background: var(--color-emerald-400);
->>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
+    >>>>>>>2bce97de28658451ee823f3c214c8fbe4adbe5f2
 }
 
 .cartoon-user path {
     fill: var(--color-orange-50);
 }
 
-<<<<<<< HEAD
-.cartoon-user:hover {
+<<<<<<< HEAD .cartoon-user:hover {
     filter: drop-shadow(0 0 0);
-=======
-a:hover .cartoon-user {
-    filter: drop-shadow(2px 4px 0px var(--color-orange-950));
->>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
-}
 
-.logo path {
-    cursor: pointer;
-}
+    =======a:hover .cartoon-user {
+        filter: drop-shadow(2px 4px 0px var(--color-orange-950));
+        >>>>>>>2bce97de28658451ee823f3c214c8fbe4adbe5f2
+    }
+
+    .logo path {
+        cursor: pointer;
+    }
+
+
+
+
+
+
+    #header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 20px 6px 30px;
+    }
+
+    .reset:hover {
+        scale: 1.05;
+        filter: drop-shadow(2px 3px 0px var(--color-stone-800)) !important;
+        transition: all .5s ease;
+    }
+
+
+
+    #info {
+        color: var(--primaryColor);
+    }
+
+
+    div#game {
+        position: relative;
+        inset: 1;
+        font-family: 'Jet', monospace;
+        line-height: 35px !important;
+        user-select: none;
+        transition: all 0.15s ease;
+    }
+
+    div#game:focus {
+        outline: 0;
+    }
+
+    #words {
+        position: relative;
+        display: flex;
+        height: calc((100vh /3) + 45px);
+        flex-wrap: wrap;
+        padding: 0.5ch 0.5ch;
+        color: var(--color-stone-800);
+    }
+
+    #game:focus #words {
+        filter: blur(0);
+    }
+
+    #focus {
+        position: absolute;
+        inset: 0;
+        height: 110%;
+        text-align: center;
+        z-index: 18;
+        cursor: pointer;
+        backdrop-filter: blur(6px);
+    }
+
+    #game:focus #focus {
+        display: none;
+    }
+
+    div.word {
+        display: flex;
+        margin: 0 5px;
+        /* box-shadow: inset 0 0 10px var(--color-black); */
+        padding-bottom: 0.4ch;
+        color: var(--color-stone-800);
+    }
+
+    .letter.correct {
+        color: var(--color-emerald-800);
+    }
+
+    .letter.incorrect {
+        color: var(--color-red);
+    }
+
+    .letter.invalided {
+        position: relative;
+        color: var(--color-stone-400);
+        font-style: italic;
+    }
+
+    .letter.invalided::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--color-red);
+    }
+
+
+
+    #cursor {
+        display: none;
+        width: 0.08ch;
+        height: 0.8ch;
+        border-radius: 50px;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-accent);
+        position: fixed;
+        transition: all 0.15s ease;
+    }
+
+    #game:focus #cursor {
+        display: flex;
+        scale: 1.5;
+        top: 0
+    }
+
+    #game.over #words {
+        opacity: .5;
+        filter: blur(0px);
+    }
+
+
+    button:disabled {
+        filter: blur(8px);
+    }
+
+
+    .btn-with:hover :last-child {
+        display: flex;
+        scale: 1;
+        opacity: 1;
+    }
+
+    .btn-with .active {
+        background: var(--color-white);
+        color: var(--color-secondary);
+    }
+
+    .typed {
+        position: relative;
+        box-shadow: inset 4px -4px 0 var(--color-stone-300);
+    }
+
+    #timeBar {
+        cursor: pointer;
+    }
+
+    #timeBar::before {
+        transition: all .5s ease;
+        width: var(--widthBar);
+        max-width: 640px;
+        background: var(--bg-bar);
+    }
+
+
+    .lucide-minus {
+        opacity: 0 !important;
+        transition: all .5s ease;
+    }
+
+    #minus:active {
+        scale: 1.2;
+    }
+
+    #minus:disabled {
+        opacity: 0.5;
+        filter: blur(8px);
+        pointer-events: none;
+    }
+
+    #plus:disabled {
+        pointer-events: none;
+        opacity: 0.5;
+        filter: blur(8px);
+    }
+
+    #plus:active {
+        scale: 1.2;
+    }
+
+    .option-conteiner {
+        position: relative;
+    }
+
+    .option-conteiner label {
+        transition: all 0.2s ease-in;
+        color: var(--color-emerald-800);
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .option-conteiner {
+        margin-top: 2ch;
+        background: var(--color-stone-100);
+        border-top: 3px solid var(--color-stone-400);
+    }
+
+    .option-conteiner input:checked+label {
+        background: var(--color-accent);
+        border: 3px solid var(--color-emerald-800);
+        filter: drop-shadow(2px 4px 0px var(--color-emerald-800));
+    }
+
+    #optionPop {
+        display: none;
+    }
+
+    #modePop {
+        display: none;
+    }
