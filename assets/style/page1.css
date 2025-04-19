@@ -15,7 +15,15 @@
     src: url(../fonts/Archivo-VariableFont_wdth\,wght.ttf);
 }
 
+<<<<<<< HEAD
 >>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
+=======
+@font-face {
+    font-family: 'lexen';
+    src: url(../fonts/LexendDeca-Regular.woff2);
+}
+
+>>>>>>> bcec49dbea483be36c89df2c0324ee03131bffed
 body {
     background: url("./../image/Background.png") center/cover no-repeat;
 }
