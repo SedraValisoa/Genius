@@ -59,6 +59,11 @@ a:hover .cartoon-user {
 
 }
 
+button:hover .cartoon-user {
+    filter: drop-shadow(1px 3px 0px var(--color-black));
+
+}
+
 .logo path {
     cursor: pointer;
 }
