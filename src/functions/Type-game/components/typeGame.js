@@ -11,7 +11,14 @@ const keyType = [];
 const keyExpected = [];
 export const scoreWord = [];
 const Language = localStorage.getItem("language") || "english";
-
+let sound = new Howl({
+  src: "./assets/sound/click3/click3_2.wav",
+  volume: 1,
+});
+let soundError = new Howl({
+  src: "./assets/sound/error4/error4_2.wav",
+  volume: 1,
+});
 async function getWords(Language) {
   return localStorage.getItem("qoutes")
     ? await fetch(`assets/quotes/${Language}.json`).then((res) => res.json())
@@ -190,23 +197,9 @@ export default class typeGame extends HTMLElement {
     window.removeEventListener("keydown", this.onGame);
     this.cursor.style.display = "none";
     window.removeEventListener("click", this.focusClick);
-    const params = new URLSearchParams();
-    const [WPM, ACCURACY] = getCurrentStats();
-    const { correct, incorrect, corrections } = calculateKeyStats(
-      keyType,
-      keyExpected
-    );
 
-    params.append("wpm", WPM);
-    params.append("accuracy", ACCURACY);
-    params.append("correct", correct);
-    params.append("incorrect", incorrect);
-    params.append("missed", missed);
-    params.append("extra", extra);
-    params.append("corrections", corrections);
-    console.log(params.toString());
-
-    window.location.href = `pages/score.html?${params.toString()}`;
+    window.location.href = `pages/score.html`;
+    this.gameStart = false;
     return;
   }
 
@@ -261,7 +254,47 @@ export default class typeGame extends HTMLElement {
       }, 2000);
     }
 
+    if (isSpace) {
+      const [WPM, ACCURACY] = getCurrentStats();
+      const { correct, incorrect, corrections } = calculateKeyStats(
+        keyType,
+        keyExpected
+      );
+      scoreWord.push([
+        {
+          WPM,
+          ACCURACY,
+          correct,
+          incorrect,
+          extra,
+          corrections,
+          missed,
+          second: this.secondLeft,
+        },
+      ]);
+      window.localStorage.clear();
+      window.localStorage.setItem(
+        "score",
+        JSON.stringify([
+          {
+            WPM,
+            ACCURACY,
+            correct,
+            incorrect,
+            extra,
+            corrections,
+            missed,
+            second: this.secondLeft,
+          },
+        ]),
+        window.localStorage.setItem("scoreWord", JSON.stringify(scoreWord))
+      );
+    }
+    if (key !== expected) {
+      soundError.play();
+    }
     if (isLetter) {
+      sound.play();
       if (currentLetter) {
         addClass(currentLetter, key === expected ? "correct" : "incorrect");
         removeClass(currentLetter, "current");
@@ -418,7 +451,7 @@ function getCurrentStats() {
   };
 
   const { correct } = calculateKeyStats(keyType, keyExpected);
-  const WPM = (correct / 5 / getGameTime()) * 60000;
+  const WPM = ((correct / 5 / gameTime) * 60 * 1000).toFixed(2);
   const ACCURACY = getAccurecy();
   return [WPM, ACCURACY];
 }

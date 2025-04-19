@@ -20,6 +20,7 @@
     "chart.js": "^4.4.8",
     "chartjs-plugin-style": "^0.5.0",
     "howler": "^2.2.4",
+    "html-screen-capture-js": "^2.0.8",
     "tailwindcss": "^4.1.1"
   }
 }

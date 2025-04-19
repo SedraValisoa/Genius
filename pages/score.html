@@ -145,10 +145,9 @@
                 wpm
               </p>
               <p
-                class="absolute text-8xl font-semibold text-white inset-18 font-[archivo] text-shadow-lg/20"
-              >
-                65
-              </p>
+                wpm
+                class="absolute text-6xl font-semibold text-white inset-16 translate-y-4 -translate-x-8 font-[archivo] text-shadow-lg/20"
+              ></p>
             </div>
             <div class="flex gap-7 items-center">
               <div class="relative">
@@ -158,26 +157,10 @@
                   class="w-30 select-none"
                 />
                 <p
-                  class="absolute text-4xl text-white font-semibold bottom-4 left-7 font-[archivo] text-shadow-lg"
-                >
-                  98%
-                </p>
+                  acc
+                  class="absolute text-2xl text-white font-semibold bottom-4 left-4 font-[archivo] text-shadow-lg"
+                ></p>
                 <p class="absolute text-2xl text-[#C0C0C0] top-2 left-4">acc</p>
-              </div>
-              <div class="relative">
-                <img
-                  src="../assets/image/consistency.svg"
-                  alt="Consistency"
-                  class="w-29 select-none"
-                />
-                <p
-                  class="absolute text-4xl text-white top-4 right-6 font-[archivo] text-shadow-lg"
-                >
-                  50%
-                </p>
-                <p class="absolute text-xs text-[#C0C0C0] left-6 bottom-4">
-                  Consistency
-                </p>
               </div>
             </div>
             <div class="flex gap-6 mt-2">
@@ -206,16 +189,22 @@
                   class="w-27 select-none"
                 />
                 <p
-                  class="absolute text-lg text-white top-0.5 left-4 font-[archivo] tracking-wider"
+                  class="absolute text-md text-white top-0.5 left-3 font-[archivo] tracking-wider"
                 >
-                  60/0/0/0
+                  <i correct></i>/<i incorrect></i>/<i missing></i>/<i
+                    extra
+                  ></i>
                 </p>
               </div>
             </div>
           </div>
-
+          <div class="w-full">
+            <canvas
+              class="flex items-center justify-center -translate-x-10"
+              id="chart"
+            ></canvas>
+          </div>
           <!-- Graph -->
-          <canvas class="flex items-center justify-center" id="chart"></canvas>
         </div>
 
         <!-- Menu Bottom -->
@@ -235,7 +224,7 @@
             />
           </button>
 
-          <button class="relative cursor-pointer">
+          <button restart class="relative cursor-pointer">
             <svg
               width="76"
               height="65"

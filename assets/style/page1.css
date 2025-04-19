@@ -238,7 +238,8 @@ button:disabled {
 }
 
 #timeBar::before {
-    transition: all .5s ease;
+    transition: width .5s ease;
+    transition: colors 1.5s ease;
     width: var(--widthBar);
     max-width: 640px;
     background: var(--bg-bar);
