@@ -9,6 +9,7 @@
   </head>
 
   <body class="flex overflow-hidden flex-col min-h-screen font-[base] w-full">
+    <cursor-custom></cursor-custom>
     <header class="h-20">
       <nav class="flex justify-between items-center">
         <img
@@ -468,23 +469,112 @@
         </aside>
         <div class="w-full h-full">
           <!-- Button option -->
-          <div class="flex items-center justify-evenly">
-            <button class="btn py-2 pr-2.5 pl-3.5 select-none btn-remove">
-              <p>With</p>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+          <div class="flex items-center justify-evenly -mb-14">
+            <button
+              class="relative btn py-2 pr-2.5 pl-3.5 select-none btn-with"
+            >
+              <p class="flex items-center gap-1.5">
+                <strong
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-alarge-small-icon lucide-a-large-small"
+                  >
+                    <path d="M21 14h-5" />
+                    <path d="M16 16v-3.5a2.5 2.5 0 0 1 5 0V16" />
+                    <path d="M4.5 13h6" />
+                    <path d="m3 16 4.5-9 4.5 9" /></svg
+                ></strong>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.1808 15.8297L6.54199 9.20285C5.89247 8.27496 6.55629 7 7.68892 7L16.3111 7C17.4437 7 18.1075 8.27496 17.458 9.20285L12.8192 15.8297C12.4211 16.3984 11.5789 16.3984 11.1808 15.8297Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </p>
+              <div
+                class="absolute top-0 right-24 origin-top-right scale-0 transition-all opacity-0 flex flex-col bg-secondary cartoon-menu border-2 border-sky-950 rounded-2xl p-2.5 gap-1.5"
               >
-                <path
-                  d="M11.1808 15.8297L6.54199 9.20285C5.89247 8.27496 6.55629 7 7.68892 7L16.3111 7C17.4437 7 18.1075 8.27496 17.458 9.20285L12.8192 15.8297C12.4211 16.3984 11.5789 16.3984 11.1808 15.8297Z"
-                  fill="currentColor"
-                />
-              </svg>
+                <span
+                  class="flex items-center gap-1.5 text-md text-teal-50 font-semibold hover:bg-white/10 rounded-md p-1.5 cursor-pointer"
+                  ><strong
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-at-sign-icon lucide-at-sign"
+                    >
+                      <circle cx="12" cy="12" r="4" />
+                      <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" /></svg
+                  ></strong>
+                  punctuation</span
+                >
+                <span
+                  class="flex items-center gap-1.5 text-md text-teal-50 font-semibold hover:bg-white/10 rounded-md p-1.5 cursor-pointer"
+                  ><strong
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-hash-icon lucide-hash"
+                    >
+                      <line x1="4" x2="20" y1="9" y2="9" />
+                      <line x1="4" x2="20" y1="15" y2="15" />
+                      <line x1="10" x2="8" y1="3" y2="21" />
+                      <line x1="16" x2="14" y1="3" y2="21" /></svg></strong
+                  >number</span
+                >
+                <span
+                  class="flex active items-center gap-1.5 text-md text-teal-50 font-semibold hover:bg-white/10 rounded-md p-1.5 cursor-pointer"
+                >
+                  <strong
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-alarge-small-icon lucide-a-large-small"
+                    >
+                      <path d="M21 14h-5" />
+                      <path d="M16 16v-3.5a2.5 2.5 0 0 1 5 0V16" />
+                      <path d="M4.5 13h6" />
+                      <path d="m3 16 4.5-9 4.5 9" /></svg></strong
+                  >word only</span
+                >
+              </div>
             </button>
-            <button class="btn py-2 pr-2.5 pl-3.5 btn-remove select-none">
+
+            <button class="btn py-2 pr-2.5 pl-3.5 btn-type select-none">
               <p class="-translate-y-0.5">Type</p>
               <svg
                 width="24"
@@ -506,26 +596,10 @@
             id="timeBar"
             class="w-full -mt-6 flex justify-center relative after:-z-2 select-none after:absolute after:left-1/2 after:top-1/2 after:w-160 after:h-3 after:-translate-x-1/2 after:rounded-full before:-z-1 before:w-160 before:h-3 before:bg-[#7FBC8C] before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 hover:before:w-22.5 before:rounded-full before:transition-normal before:ease-linear before:duration-15000"
           >
-            <div
-              class="relative h-fit text-secondary flex flex-col items-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-chevron-up-icon lucide-chevron-up"
-              >
-                <path d="m18 15-6-6-6 6" />
-              </svg>
+            <div class="relative h-fit text-secondary flex items-center">
               <svg
                 viewBox="0 0 198 121"
-                class="size-28 translate-y-2 switchTimer"
+                class="size-38 translate-y-2 switchTimer"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -596,31 +670,50 @@
                   </filter>
                 </defs>
               </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="size-8 bg-amber-200 shadow-xl p-2 rounded-lg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-chevron-down-icon lucide-chevron-down"
+              <div
+                class="absolute inset-0 flex items-center justify-between timer-conteiner group"
               >
-                <path d="m6 9 6 6 6-6" />
-              </svg>
+                <svg
+                  id="minus"
+                  class="size-8 bg-amber-100 shadow-xl p-2 rounded-lg opacity-0 active:scale-110 group-hover:opacity-100 transition-all"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-minus-icon lucide-minus"
+                >
+                  <path d="M5 12h14" />
+                </svg>
+                <p
+                  id="timer"
+                  class="font-[Zcool] font-bold text-3xl text-secondary"
+                >
+                  30
+                </p>
+                <svg
+                  id="plus"
+                  class="size-8 bg-amber-100 shadow-xl p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-plus-icon lucide-plus"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5v14" />
+                </svg>
+              </div>
             </div>
-
-            <p
-              id="timer"
-              class="absolute font-[Zcool] text-3xl text-secondary translate-y-16"
-            ></p>
           </div>
 
           <!-- Langage / Option-timer -->
-          <div class="flex-1 flex justify-around -translate-y-4">
+          <div class="flex-1 flex justify-center gap-80 -translate-y-4 -mt-8">
             <button
-              class="btn p-1 bg-white/20! btn-remove text-secondary! select-none"
+              class="btn btn-language p-1 bg-white/20! btn-remove text-secondary! select-none"
             >
               <svg
                 width="24"
@@ -659,7 +752,7 @@
               <p class="font-semibold">English</p>
             </button>
             <button
-              class="btn p-1 bg-white/20! backdrop-blur-2xl text-secondary! btn-remove select-none"
+              class="btn btn-mode p-1 bg-white/20! backdrop-blur-2xl text-secondary! btn-remove select-none"
             >
               <svg
                 width="24"
@@ -703,7 +796,7 @@
           <div
             class="w-1/2 relative flex p-7 mx-auto typed-conteiner transition-all z-10"
           >
-            <span
+            <!-- <span
               class="absolute top-0 right-0 w-17.5 h-15 border-t-[5px] border-r-[5px] border-stone-400 rounded-tr-4xl"
             ></span>
             <span
@@ -714,7 +807,7 @@
             ></span>
             <span
               class="absolute bottom-0 left-0 w-17.5 h-15 border-b-[5px] border-l-[5px] border-stone-400 rounded-bl-4xl"
-            ></span>
+            ></span> -->
             <div
               class="typed text-8xl line-clamp-2 bg-primary rounded-xl shadow-lg"
             >
@@ -751,14 +844,110 @@
           </div>
         </div>
       </div>
+
+      <div
+        id="optionPop"
+        class="absolute z-999 flex justify-center items-center inset-0 bg-black/30 backdrop-blur-md"
+      >
+        <div class="pt-8 bg-amber-50 w-1/2 rounded-2xl cartoon-user options">
+          <h3
+            class="flex items-center gap-4 border-2 mx-4 border-sky-950 w-fit rounded-xl p-4 text-2xl text-sky-900 cartoon-menu font-bold font-[archivo]"
+          >
+            Title
+          </h3>
+          <span
+            class="text-2xl bg-amber-100 shadow-md p-3 text-secondary cursor-pointer rounded-full absolute top-2 right-2"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-x-icon lucide-x"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" /></svg
+          ></span>
+          <div
+            class="grid grid-cols-3 gap-4 p-8 rounded-b-2xl grid-rows-1 option-conteiner"
+          ></div>
+        </div>
+      </div>
+      <div
+        id="modePop"
+        class="absolute z-999 flex justify-center items-center inset-0 bg-black/30 backdrop-blur-md"
+      >
+        <div class="pt-8 bg-amber-50 w-1/2 rounded-2xl cartoon-user options">
+          <h3
+            class="flex items-center gap-4 border-2 mx-4 border-sky-950 w-fit rounded-xl p-4 text-2xl text-sky-900 cartoon-menu font-bold font-[archivo]"
+          >
+            Title
+          </h3>
+          <span
+            class="text-2xl bg-amber-100 shadow-md p-3 text-secondary cursor-pointer rounded-full absolute top-2 right-2"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-x-icon lucide-x"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" /></svg
+          ></span>
+          <div
+            class="grid grid-cols-2 gap-4 p-8 rounded-b-2xl grid-rows-1 option-conteiner"
+          ></div>
+        </div>
+      </div>
+
+      <template id="listOption">
+        <input type="radio" class="hidden" name="option" id="option1" />
+        <label
+          for="option1"
+          class="flex items-center justify-center gap-4 text-lg border-2 rounded-2xl border-accent bg-emerald-200 p-2"
+        ></label
+      ></template>
+      <template id="modeOption">
+        <input type="radio" class="hidden" name="mode" id="mode" />
+        <label
+          for="mode"
+          class="flex items-center justify-center gap-4 text-lg border-2 rounded-2xl border-accent bg-emerald-200 p-2"
+        ></label
+      ></template>
     </main>
-    <footer class="grid grid-cols-3 w-full h-fit pb-8">
+    <footer class="grid grid-cols-3 w-full h-fit pb-18">
       <div
         class="flex text-sm! text-center font-[Zcool] text-secondary items-center anime-footer-left"
       >
         <p
-          class="bg-primary px-4 py-1 cartoon-user border-2 border-stone-400 rounded-xl"
+          class="flex items-center gap-2 bg-primary px-4 py-1 cartoon-user border-2 border-stone-400 rounded-xl"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-3"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-git-branch-icon lucide-git-branch"
+          >
+            <line x1="6" x2="6" y1="3" y2="15" />
+            <circle cx="18" cy="6" r="3" />
+            <circle cx="6" cy="18" r="3" />
+            <path d="M18 9a9 9 0 0 1-9 9" />
+          </svg>
           v.1.0.0
         </p>
       </div>
@@ -769,6 +958,7 @@
         <svg
           width="30"
           height="30"
+          id="resetIcon"
           viewBox="0 0 40 40"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -807,7 +997,7 @@
         </svg>
       </button>
     </footer>
-    <script type="module" src="src/functions/animations/anime.js"></script>
     <script type="module" src="src/functions/Type-game/index.js"></script>
+    <script type="module" src="src/functions/animations/anime.js"></script>
   </body>
 </html>

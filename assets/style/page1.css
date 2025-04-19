@@ -56,6 +56,10 @@ footer:has(.cartoon:hover) .cartoon {
     transition: all 0.15s ease;
 }
 
+div.cartoon-user {
+    border: 3px solid var(--color-stone-400);
+    filter: drop-shadow(5px 5px 0 var(--color-stone-400));
+}
 
 .cartoon-user path {
     fill: var(--color-orange-50);
@@ -75,6 +79,11 @@ li:has(svg:hover) {
 
 svg:hover~.cartoon-menu {
     filter: drop-shadow(0 0 0);
+}
+
+h3.cartoon-menu {
+    background: var(--color-sky-100);
+    filter: drop-shadow(2px 4px 0px var(--color-sky-950));
 }
 
 a:hover .cartoon-user {
@@ -98,6 +107,12 @@ a:hover .cartoon-user {
     margin: 20px 6px 30px;
 }
 
+.reset:hover {
+    scale: 1.05;
+    filter: drop-shadow(2px 3px 0px var(--color-stone-800)) !important;
+    transition: all .5s ease;
+}
+
 
 
 #info {
@@ -106,10 +121,10 @@ a:hover .cartoon-user {
 
 
 div#game {
-    display: flex;
+    position: relative;
+    inset: 1;
     font-family: 'Jet', monospace;
     line-height: 35px !important;
-    display: -webkit-box;
     user-select: none;
     transition: all 0.15s ease;
 }
@@ -133,10 +148,8 @@ div#game:focus {
 
 #focus {
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+    inset: 0;
+    height: 110%;
     text-align: center;
     z-index: 18;
     cursor: pointer;
@@ -209,21 +222,87 @@ button:disabled {
     filter: blur(8px);
 }
 
-/* .level,
-.btn-remove {
-    display: none !important;
-} */
 
+.btn-with:hover :last-child {
+    display: flex;
+    scale: 1;
+    opacity: 1;
+}
+
+.btn-with .active {
+    background: var(--color-white);
+    color: var(--color-secondary);
+}
 
 .typed {
     position: relative;
     box-shadow: inset 4px -4px 0 var(--color-stone-300);
 }
 
+#timeBar {
+    cursor: pointer;
+}
 
 #timeBar::before {
     transition: all .5s ease;
     width: var(--widthBar);
     max-width: 640px;
     background: var(--bg-bar);
+}
+
+
+.lucide-minus {
+    opacity: 0 !important;
+    transition: all .5s ease;
+}
+
+#minus:active {
+    scale: 1.2;
+}
+
+#minus:disabled {
+    opacity: 0.5;
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+#plus:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    filter: blur(8px);
+}
+
+#plus:active {
+    scale: 1.2;
+}
+
+.option-conteiner {
+    position: relative;
+}
+
+.option-conteiner label {
+    transition: all 0.2s ease-in;
+    color: var(--color-emerald-800);
+    text-align: center;
+    font-weight: 600;
+}
+
+.option-conteiner {
+    margin-top: 2ch;
+    background: var(--color-stone-100);
+    border-top: 3px solid var(--color-stone-400);
+}
+
+.option-conteiner input:checked+label {
+    background: var(--color-accent);
+    border: 3px solid var(--color-emerald-800);
+    filter: drop-shadow(2px 4px 0px var(--color-emerald-800));
+}
+
+#optionPop {
+    display: none;
+}
+
+#modePop {
+    display: none;
 }
