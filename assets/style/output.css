@@ -1589,6 +1589,25 @@ body {
     box-shadow: 3px 3px 0px var(--color-sky-950);
   }
 }
+.info-bulle {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.copier-container:hover .info-bulle {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 .btn p {
   letter-spacing: 2px !important;
 }
