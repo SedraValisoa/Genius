@@ -55,12 +55,20 @@ document.addEventListener("DOMContentLoaded", () => {
     .sync(footerLeft, 10)
     .sync(notification, 10)
     .sync(footerRigth, 10);
-  let clicked = false;
-  document.getElementById("focus").addEventListener("click", () => {
-    clicked = true;
-    tl.reverse().then(() => (clicked = false));
-  });
-  document
-    .getElementById("game")
-    .addEventListener("mouseleave", () => (clicked ? tl.restart() : null));
 });
+document.querySelector("button.reset").addEventListener("click", () =>
+  animate("#resetIcon", {
+    rotateZ: "360deg",
+    easing: "easeInOut",
+    duration: 300,
+    onComplete: (self) => self.reverse(),
+  })
+);
+let clicked = false;
+document.body.getElementById("focus").addEventListener("click", () => {
+  clicked = true;
+  tl.reverse().then(() => (clicked = false));
+});
+document.body
+  .getElementById("game")
+  .addEventListener("mouseleave", () => (clicked ? tl.restart() : null));
