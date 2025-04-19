@@ -1,16 +1,7 @@
 @import url(./page1.css);
 @import 'tailwindcss';
 
-<<<<<<< HEAD
 
-@theme {
-    --shadow-cartoon: 4px, 4px, 0 var(--color-green-900)
-}
-
-* {
-    box-sizing: border-box;
-}
-=======
 @theme {
     --shadow-cartoon: 4px, 4px, 0 var(--color-green-900);
     --color-primary: #EFEEDC;
@@ -36,6 +27,7 @@ body {
     transition: 0.3s ease;
     border: 1.5px solid #000;
     z-index: 10;
+
     &:hover {
         box-shadow: 6px 4px 0px #000;
     }
@@ -44,10 +36,6 @@ body {
 .blurred {
     box-shadow: 0 0 20px 20px #EFEEDC;
 }
-<<<<<<< HEAD
->>>>>>> 2bce97de28658451ee823f3c214c8fbe4adbe5f2
-=======
-
 
 .setting-btn {
     padding: 15px;
@@ -59,6 +47,7 @@ body {
     transition: 0.3s ease;
     font-family: 'lexen';
     width: 200px;
+
     &:hover {
         background-color: #e0e0e0;
     }
@@ -84,6 +73,7 @@ input[type="radio"] {
 .setting:has(input#burst-extreme[type="radio"]:checked) svg.burst-extreme path.cursor-pointer,
 .setting:has(input#burst-master[type="radio"]:checked) svg.burst-master path.cursor-pointer {
     fill: #F4D738;
+
     &:hover {
         fill: #f7e895;
     }
@@ -102,8 +92,8 @@ input[type="radio"] {
 .setting:has(input#burst-extreme[type="radio"]:checked) .group :where(svg.burst-normal path.cursor-pointer, svg.burst-master path.cursor-pointer),
 .setting:has(input#burst-master[type="radio"]:checked) .group :where(svg.burst-normal path.cursor-pointer, svg.burst-extreme path.cursor-pointer) {
     fill: #EFEEDC;
+
     &:hover {
         fill: #CFCEBA;
     }
 }
->>>>>>> bcec49dbea483be36c89df2c0324ee03131bffed
