@@ -1,0 +1,5 @@
+node_modules
+
+*.log
+assets\style\output.css
+package-lock.json

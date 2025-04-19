@@ -1,0 +1,127 @@
+@import url(./page1.css);
+@import 'tailwindcss';
+
+
+@theme {
+    --shadow-cartoon: 4px, 4px, 0 var(--color-green-900);
+    --color-primary: #EFEEDC;
+    --color-secondary: #2C506D;
+    --color-red: #BD7D7D;
+    --color-green: #7FBC8C;
+}
+
+body {
+    background: url("./../image/background.png") center / cover no-repeat;
+    box-shadow: inset 0px 0px 100px 16px #EFEEDC;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+    background: var(--color-sky-900);
+    border-radius: 8px;
+    color: var(--color-sky-50);
+    font-weight: 700;
+    transition: 0.3s ease;
+    border: 2px solid var(--color-sky-950);
+    z-index: 10;
+
+
+    &:hover {
+        background: var(--color-sky-700);
+        box-shadow: 3px 3px 0px var(--color-sky-950);
+    }
+}
+
+.info-bulle {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .copier-container:hover .info-bulle {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+.btn p {
+    letter-spacing: 2px !important;
+}
+
+.blurred {
+    box-shadow: 0 0 80px 20px #EFEEDC;
+}
+
+.setting-btn {
+    padding: 15px;
+    background: white;
+    cursor: pointer;
+    border-radius: 15px;
+    color: #656566;
+    font-size: 1.1em;
+    transition: 0.3s ease;
+    font-family: 'lexen';
+    width: 200px;
+
+    &:hover {
+        background-color: #e0e0e0;
+    }
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+/* fill-[#F4D738] group-hover:fill-[#f7e895]  jaune*/
+/* fill-[#EFEEDC] group-hover:fill-[#CFCEBA] grid */
+
+.setting:has(input#difficulty-normal[type="radio"]:checked) svg.difficulty-normal path.cursor-pointer,
+.setting:has(input#difficulty-extreme[type="radio"]:checked) svg.difficulty-extreme path.cursor-pointer,
+.setting:has(input#difficulty-master[type="radio"]:checked) svg.difficulty-master path.cursor-pointer,
+.setting:has(input#speed-normal[type="radio"]:checked) svg.speed-normal path.cursor-pointer,
+.setting:has(input#speed-extreme[type="radio"]:checked) svg.speed-extreme path.cursor-pointer,
+.setting:has(input#speed-master[type="radio"]:checked) svg.speed-master path.cursor-pointer,
+.setting:has(input#accurency-normal[type="radio"]:checked) svg.accurency-normal path.cursor-pointer,
+.setting:has(input#accurency-extreme[type="radio"]:checked) svg.accurency-extreme path.cursor-pointer,
+.setting:has(input#accurency-master[type="radio"]:checked) svg.accurency-master path.cursor-pointer,
+.setting:has(input#burst-normal[type="radio"]:checked) svg.burst-normal path.cursor-pointer,
+.setting:has(input#burst-extreme[type="radio"]:checked) svg.burst-extreme path.cursor-pointer,
+.setting:has(input#burst-master[type="radio"]:checked) svg.burst-master path.cursor-pointer {
+    fill: #F4D738;
+
+    &:hover {
+        fill: #f7e895;
+    }
+}
+
+.setting:has(input#difficulty-normal[type="radio"]:checked) .group :where(svg.difficulty-extrem path.cursor-pointer, svg.difficulty-master path.cursor-pointer),
+.setting:has(input#difficulty-extreme[type="radio"]:checked) .group :where(svg.difficulty-normal path.cursor-pointer, svg.difficulty-master path.cursor-pointer),
+.setting:has(input#difficulty-master[type="radio"]:checked) .group :where(svg.difficulty-normal path.cursor-pointer, svg.difficulty-extreme path.cursor-pointer),
+.setting:has(input#speed-normal[type="radio"]:checked) .group :where(svg.speed-extrem path.cursor-pointer, svg.speed-master path.cursor-pointer),
+.setting:has(input#speed-extreme[type="radio"]:checked) .group :where(svg.speed-normal path.cursor-pointer, svg.speed-master path.cursor-pointer),
+.setting:has(input#speed-master[type="radio"]:checked) .group :where(svg.speed-normal path.cursor-pointer, svg.speed-extreme path.cursor-pointer),
+.setting:has(input#accurency-normal[type="radio"]:checked) .group :where(svg.accurency-extrem path.cursor-pointer, svg.accurency-master path.cursor-pointer),
+.setting:has(input#accurency-extreme[type="radio"]:checked) .group :where(svg.accurency-normal path.cursor-pointer, svg.accurency-master path.cursor-pointer),
+.setting:has(input#accurency-master[type="radio"]:checked) .group :where(svg.accurency-normal path.cursor-pointer, svg.accurency-extreme path.cursor-pointer),
+.setting:has(input#burst-normal[type="radio"]:checked) .group :where(svg.burst-extrem path.cursor-pointer, svg.burst-master path.cursor-pointer),
+.setting:has(input#burst-extreme[type="radio"]:checked) .group :where(svg.burst-normal path.cursor-pointer, svg.burst-master path.cursor-pointer),
+.setting:has(input#burst-master[type="radio"]:checked) .group :where(svg.burst-normal path.cursor-pointer, svg.burst-extreme path.cursor-pointer) {
+    fill: #EFEEDC;
+
+    &:hover {
+        fill: #CFCEBA;
+    }
+}

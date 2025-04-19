@@ -4,7 +4,7 @@
   "description": "A barebones typing website for you to complete. ",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx @tailwindcss/cli -i ./assets/style/style.css -o ./assets/style/output.css --watch"
   },
   "keywords": [
     "typing",
@@ -12,5 +12,14 @@
     "speedtyping"
   ],
   "author": "HEI Madagascar : Toky & Fiantso",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.1",
+    "animejs": "^4.0.0",
+    "chart.js": "^4.4.8",
+    "chartjs-plugin-style": "^0.5.0",
+    "howler": "^2.2.4",
+    "html-screen-capture-js": "^2.0.8",
+    "tailwindcss": "^4.1.1"
+  }
 }
